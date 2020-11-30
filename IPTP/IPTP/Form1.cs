@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using OpenCvSharp;
+using System;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using OpenCvSharp;
 
 namespace IPTP
 {
     public partial class Form1 : Form
     {
-        Mat src = null;
-        Mat dst = null;
+        private Mat src = null;
+        private Mat dst = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +33,7 @@ namespace IPTP
         private void open_Click(object sender, EventArgs e)
         {
             String filePath = openFile();
-            if(filePath != null)
+            if (filePath != null)
             {
                 src = imread(filePath);
                 updateSrc();
