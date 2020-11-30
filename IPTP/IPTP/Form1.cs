@@ -24,9 +24,9 @@ namespace IPTP
             String filePath = openFile();
             if(filePath != null)
             {
-                Mat screen = null, find = null, res = null;
-                screen = OpenCvSharp.Extensions.BitmapConverter.ToMat((Bitmap)pictureBox1.Image);
-                find = OpenCvSharp.Extensions.BitmapConverter.ToMat(new Bitmap(filePath));
+                Mat img = null;
+                img = OpenCvSharp.Extensions.BitmapConverter.ToMat(new Bitmap(filePath));
+                pictureBox1.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(img);
             }
         }
 
@@ -35,9 +35,9 @@ namespace IPTP
             String filePath = null;
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = "이미지 파일 (*.jpg)|*.jpg|(*.png)|*.png|모든 파일 (*.*)|*.*";
-            openFileDialog.FilterIndex = 2;
+            openFileDialog.InitialDirectory = System.Windows.Forms.Application.StartupPath;
+            openFileDialog.Filter = "이미지 파일 (*.jpg)|*.jpg|이미지 파일 (*.png)|*.png|모든 파일 (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
