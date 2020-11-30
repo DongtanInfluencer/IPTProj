@@ -41,14 +41,12 @@
             // 
             // pb_src
             // 
-            this.pb_src.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_src.BackColor = System.Drawing.Color.White;
             this.pb_src.Location = new System.Drawing.Point(70, 100);
             this.pb_src.Name = "pb_src";
             this.pb_src.Size = new System.Drawing.Size(512, 512);
             this.pb_src.TabIndex = 0;
+            this.pb_src.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_src.TabStop = false;
             // 
             // btn_open
@@ -63,10 +61,12 @@
             // 
             // pb_dst
             // 
+            this.pb_dst.BackColor = System.Drawing.Color.White;
             this.pb_dst.Location = new System.Drawing.Point(670, 100);
             this.pb_dst.Name = "pb_dst";
             this.pb_dst.Size = new System.Drawing.Size(512, 512);
             this.pb_dst.TabIndex = 0;
+            this.pb_dst.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_dst.TabStop = false;
             // 
             // btn_save

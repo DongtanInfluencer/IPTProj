@@ -66,10 +66,22 @@ namespace IPTP
             return filePath;
         }
 
-        private void saveFile()
+        private String saveFile()
         {
+            String filePath = null;
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
+            saveFileDialog.InitialDirectory = System.Windows.Forms.Application.StartupPath;
+            saveFileDialog.Filter = "이미지 파일 (*.jpg)|*.jpg|이미지 파일 (*.png)|*.png|모든 파일 (*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = saveFileDialog.FileName;
+            }
+            return filePath;
         }
 
         private void btn_convert_Click(object sender, EventArgs e)
@@ -82,7 +94,12 @@ namespace IPTP
         {
             if (dst != null)
             {
-
+                String filePath = saveFile();
+                if (filePath != null)
+                {
+                    dst.SaveImage(filePath);
+                    MessageBox.Show("저장되었습니다!");
+                }
             }
         }
     }
