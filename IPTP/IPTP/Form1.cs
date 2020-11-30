@@ -14,19 +14,38 @@ namespace IPTP
 {
     public partial class Form1 : Form
     {
+        Mat src = null;
+        Mat dst = null;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void updateSrc()
+        {
+            pb_src.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(src);
+        }
+
+        private void updateDst()
+        {
+            pb_dst.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dst);
+        }
+
+        private Mat imread(String path)
+        {
+            return OpenCvSharp.Extensions.BitmapConverter.ToMat(new Bitmap(path));
+        }
+
+        private void open_Click(object sender, EventArgs e)
         {
             String filePath = openFile();
             if(filePath != null)
             {
-                Mat img = null;
-                img = OpenCvSharp.Extensions.BitmapConverter.ToMat(new Bitmap(filePath));
-                pictureBox1.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(img);
+                src = imread(filePath);
+                updateSrc();
+                dst = Mat.Zeros(src.Size(), MatType.CV_8U);
+                Cv2.CvtColor(src, dst, ColorConversionCodes.BGR2GRAY);
+                updateDst();
             }
         }
 
@@ -45,6 +64,26 @@ namespace IPTP
                 filePath = openFileDialog.FileName;
             }
             return filePath;
+        }
+
+        private void saveFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+        }
+
+        private void btn_convert_Click(object sender, EventArgs e)
+        {
+            src = dst;
+            updateSrc();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (dst != null)
+            {
+
+            }
         }
     }
 }

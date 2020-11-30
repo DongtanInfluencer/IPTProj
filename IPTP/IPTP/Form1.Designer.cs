@@ -28,47 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pb_src = new System.Windows.Forms.PictureBox();
+            this.btn_open = new System.Windows.Forms.Button();
+            this.pb_dst = new System.Windows.Forms.PictureBox();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_convert = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_src)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pb_src
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(70, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(986, 518);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pb_src.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pb_src.BackColor = System.Drawing.Color.White;
+            this.pb_src.Location = new System.Drawing.Point(70, 100);
+            this.pb_src.Name = "pb_src";
+            this.pb_src.Size = new System.Drawing.Size(512, 512);
+            this.pb_src.TabIndex = 0;
+            this.pb_src.TabStop = false;
             // 
-            // button1
+            // btn_open
             // 
-            this.button1.Location = new System.Drawing.Point(70, 578);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(986, 78);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "찾기";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_open.Location = new System.Drawing.Point(70, 634);
+            this.btn_open.Name = "btn_open";
+            this.btn_open.Size = new System.Drawing.Size(512, 78);
+            this.btn_open.TabIndex = 1;
+            this.btn_open.Text = "불러오기";
+            this.btn_open.UseVisualStyleBackColor = true;
+            this.btn_open.Click += new System.EventHandler(this.open_Click);
+            // 
+            // pb_dst
+            // 
+            this.pb_dst.Location = new System.Drawing.Point(670, 100);
+            this.pb_dst.Name = "pb_dst";
+            this.pb_dst.Size = new System.Drawing.Size(512, 512);
+            this.pb_dst.TabIndex = 0;
+            this.pb_dst.TabStop = false;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(670, 634);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(512, 78);
+            this.btn_save.TabIndex = 1;
+            this.btn_save.Text = "저장하기";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(70, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "원본 이미지";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(676, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "처리된 이미지";
+            // 
+            // btn_convert
+            // 
+            this.btn_convert.Location = new System.Drawing.Point(588, 301);
+            this.btn_convert.Name = "btn_convert";
+            this.btn_convert.Size = new System.Drawing.Size(76, 45);
+            this.btn_convert.TabIndex = 3;
+            this.btn_convert.Text = "←";
+            this.btn_convert.UseVisualStyleBackColor = true;
+            this.btn_convert.Click += new System.EventHandler(this.btn_convert_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 680);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1474, 782);
+            this.Controls.Add(this.btn_convert);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_open);
+            this.Controls.Add(this.pb_dst);
+            this.Controls.Add(this.pb_src);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_src)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pb_src;
+        private System.Windows.Forms.Button btn_open;
+        private System.Windows.Forms.PictureBox pb_dst;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_convert;
     }
 }
 
