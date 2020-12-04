@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_convert = new System.Windows.Forms.Button();
+            this.btn_pixelProc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_src)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).BeginInit();
             this.SuspendLayout();
@@ -45,8 +46,8 @@
             this.pb_src.Location = new System.Drawing.Point(70, 100);
             this.pb_src.Name = "pb_src";
             this.pb_src.Size = new System.Drawing.Size(512, 512);
-            this.pb_src.TabIndex = 0;
             this.pb_src.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pb_src.TabIndex = 0;
             this.pb_src.TabStop = false;
             // 
             // btn_open
@@ -65,8 +66,8 @@
             this.pb_dst.Location = new System.Drawing.Point(670, 100);
             this.pb_dst.Name = "pb_dst";
             this.pb_dst.Size = new System.Drawing.Size(512, 512);
-            this.pb_dst.TabIndex = 0;
             this.pb_dst.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pb_dst.TabIndex = 0;
             this.pb_dst.TabStop = false;
             // 
             // btn_save
@@ -107,11 +108,22 @@
             this.btn_convert.UseVisualStyleBackColor = true;
             this.btn_convert.Click += new System.EventHandler(this.btn_convert_Click);
             // 
+            // btn_pixelProc
+            // 
+            this.btn_pixelProc.Location = new System.Drawing.Point(1208, 100);
+            this.btn_pixelProc.Name = "btn_pixelProc";
+            this.btn_pixelProc.Size = new System.Drawing.Size(242, 58);
+            this.btn_pixelProc.TabIndex = 4;
+            this.btn_pixelProc.Text = "밝기/대비/감마";
+            this.btn_pixelProc.UseVisualStyleBackColor = true;
+            this.btn_pixelProc.Click += new System.EventHandler(this.btn_pixelProc_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 782);
+            this.Controls.Add(this.btn_pixelProc);
             this.Controls.Add(this.btn_convert);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -120,7 +132,7 @@
             this.Controls.Add(this.pb_dst);
             this.Controls.Add(this.pb_src);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "영상처리 기말프로젝트 1팀";
             ((System.ComponentModel.ISupportInitialize)(this.pb_src)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).EndInit();
             this.ResumeLayout(false);
@@ -137,6 +149,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_convert;
+        private System.Windows.Forms.Button btn_pixelProc;
     }
 }
 
