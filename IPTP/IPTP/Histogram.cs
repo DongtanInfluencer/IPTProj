@@ -12,9 +12,14 @@ namespace IPTP
 {
     public partial class Histogram : Form
     {
-        public Histogram()
+        private Form1 form = null;
+        public Histogram(Form1 form)
         {
             InitializeComponent();
+            this.form = form;
         }
+
+        
+        
     }
 }

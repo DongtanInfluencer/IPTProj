@@ -136,6 +136,7 @@
             this.but_Histogram.TabIndex = 5;
             this.but_Histogram.Text = "히스토그램";
             this.but_Histogram.UseVisualStyleBackColor = true;
+            this.but_Histogram.Click += new System.EventHandler(this.but_Histogram_Click);
             // 
             // Form1
             // 

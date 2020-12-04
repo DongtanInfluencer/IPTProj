@@ -28,63 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pb_Histogram_grayScale = new System.Windows.Forms.PictureBox();
+            this.pb_Histogram_Red = new System.Windows.Forms.PictureBox();
+            this.pb_Histogram_Green = new System.Windows.Forms.PictureBox();
+            this.pb_Histogram_Blue = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_grayScale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Red)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Green)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Blue)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pb_Histogram_grayScale
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(28, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pb_Histogram_grayScale.BackColor = System.Drawing.Color.White;
+            this.pb_Histogram_grayScale.Location = new System.Drawing.Point(28, 47);
+            this.pb_Histogram_grayScale.Name = "pb_Histogram_grayScale";
+            this.pb_Histogram_grayScale.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_grayScale.TabIndex = 0;
+            this.pb_Histogram_grayScale.TabStop = false;
             // 
-            // pictureBox2
+            // pb_Histogram_Red
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(229, 47);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pb_Histogram_Red.BackColor = System.Drawing.Color.White;
+            this.pb_Histogram_Red.Location = new System.Drawing.Point(229, 47);
+            this.pb_Histogram_Red.Name = "pb_Histogram_Red";
+            this.pb_Histogram_Red.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Red.TabIndex = 1;
+            this.pb_Histogram_Red.TabStop = false;
             // 
-            // pictureBox3
+            // pb_Histogram_Green
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(429, 47);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pb_Histogram_Green.BackColor = System.Drawing.Color.White;
+            this.pb_Histogram_Green.Location = new System.Drawing.Point(429, 47);
+            this.pb_Histogram_Green.Name = "pb_Histogram_Green";
+            this.pb_Histogram_Green.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Green.TabIndex = 2;
+            this.pb_Histogram_Green.TabStop = false;
             // 
-            // pictureBox4
+            // pb_Histogram_Blue
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(624, 47);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.pb_Histogram_Blue.BackColor = System.Drawing.Color.White;
+            this.pb_Histogram_Blue.Location = new System.Drawing.Point(624, 47);
+            this.pb_Histogram_Blue.Name = "pb_Histogram_Blue";
+            this.pb_Histogram_Blue.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Blue.TabIndex = 3;
+            this.pb_Histogram_Blue.TabStop = false;
             // 
             // Histogram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pb_Histogram_Blue);
+            this.Controls.Add(this.pb_Histogram_Green);
+            this.Controls.Add(this.pb_Histogram_Red);
+            this.Controls.Add(this.pb_Histogram_grayScale);
             this.Name = "Histogram";
             this.Text = "Histogram";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_grayScale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Red)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Green)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Blue)).EndInit();
             this.ResumeLayout(false);
 
         }
