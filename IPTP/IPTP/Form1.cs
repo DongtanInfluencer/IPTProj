@@ -102,5 +102,11 @@ namespace IPTP
                 }
             }
         }
+
+        private void btn_pixelProc_Click(object sender, EventArgs e)
+        {
+            PixelProcForm pixelProcForm = new PixelProcForm();
+            pixelProcForm.Show();
+        }
     }
 }
