@@ -120,6 +120,9 @@ namespace IPTP
 
         private void btn_pixelProc_Click(object sender, EventArgs e)
         {
+
+            if (src == null) return;
+
             if (!pixelProcForm.Visible)
             {
                 pixelProcForm.Show();
@@ -128,6 +131,11 @@ namespace IPTP
             {
                 pixelProcForm.Hide();
             }
+        }
+
+        private void btn_histogram_Click(object sender,EventArgs e)
+        {
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)

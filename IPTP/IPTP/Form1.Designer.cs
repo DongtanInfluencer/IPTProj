@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_convert = new System.Windows.Forms.Button();
             this.btn_pixelProc = new System.Windows.Forms.Button();
+            this.but_Histogram = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_src)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).BeginInit();
             this.SuspendLayout();
@@ -126,11 +127,22 @@
             this.btn_pixelProc.UseVisualStyleBackColor = true;
             this.btn_pixelProc.Click += new System.EventHandler(this.btn_pixelProc_Click);
             // 
+            // but_Histogram
+            // 
+            this.but_Histogram.Location = new System.Drawing.Point(650, 83);
+            this.but_Histogram.Margin = new System.Windows.Forms.Padding(2);
+            this.but_Histogram.Name = "but_Histogram";
+            this.but_Histogram.Size = new System.Drawing.Size(130, 29);
+            this.but_Histogram.TabIndex = 5;
+            this.but_Histogram.Text = "히스토그램";
+            this.but_Histogram.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 391);
+            this.Controls.Add(this.but_Histogram);
             this.Controls.Add(this.btn_pixelProc);
             this.Controls.Add(this.btn_convert);
             this.Controls.Add(this.label2);
@@ -160,6 +172,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_convert;
         private System.Windows.Forms.Button btn_pixelProc;
+        private System.Windows.Forms.Button but_Histogram;
     }
 }
 
