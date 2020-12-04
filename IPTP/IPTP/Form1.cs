@@ -10,24 +10,46 @@ namespace IPTP
         private Mat src = null;
         private Mat dst = null;
 
+        private PixelProcForm pixelProcForm = null;
+
         public Form1()
         {
             InitializeComponent();
+            pixelProcForm = new PixelProcForm(this);
         }
 
-        private void updateSrc()
+        public void updateSrc()
         {
             pb_src.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(src);
         }
 
-        private void updateDst()
+        public Mat getSrc()
+        {
+            return src;
+        }
+        public Mat getDst()
+        {
+            return dst;
+        }
+        public void setSrc(Mat src)
+        {
+            this.src = src;
+        }
+        public void setDst(Mat dst)
+        {
+            this.dst = dst;
+        }
+
+        public void updateDst()
         {
             pb_dst.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dst);
         }
 
         private Mat imread(String path)
         {
-            return OpenCvSharp.Extensions.BitmapConverter.ToMat(new Bitmap(path));
+            Bitmap bitmap = new Bitmap(path);
+            Mat mat = OpenCvSharp.Extensions.BitmapConverter.ToMat(bitmap);
+            return mat;
         }
 
         private void open_Click(object sender, EventArgs e)
@@ -37,8 +59,7 @@ namespace IPTP
             {
                 src = imread(filePath);
                 updateSrc();
-                dst = Mat.Zeros(src.Size(), MatType.CV_8U);
-                Cv2.CvtColor(src, dst, ColorConversionCodes.BGR2GRAY);
+                dst = src.Clone();
                 updateDst();
             }
         }
@@ -99,8 +120,19 @@ namespace IPTP
 
         private void btn_pixelProc_Click(object sender, EventArgs e)
         {
-            PixelProcForm pixelProcForm = new PixelProcForm();
-            pixelProcForm.Show();
+            if (!pixelProcForm.Visible)
+            {
+                pixelProcForm.Show();
+            }
+            else
+            {
+                pixelProcForm.Hide();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

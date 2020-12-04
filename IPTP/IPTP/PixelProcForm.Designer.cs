@@ -44,10 +44,11 @@
             // 
             // tr_contrast
             // 
-            this.tr_contrast.Location = new System.Drawing.Point(220, 118);
+            this.tr_contrast.Location = new System.Drawing.Point(118, 59);
+            this.tr_contrast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tr_contrast.Maximum = 200;
             this.tr_contrast.Name = "tr_contrast";
-            this.tr_contrast.Size = new System.Drawing.Size(936, 90);
+            this.tr_contrast.Size = new System.Drawing.Size(504, 45);
             this.tr_contrast.TabIndex = 0;
             this.tr_contrast.Value = 100;
             this.tr_contrast.Scroll += new System.EventHandler(this.tr_contrast_Scroll);
@@ -55,36 +56,41 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 130);
+            this.label2.Location = new System.Drawing.Point(17, 65);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
+            this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "대비";
             // 
             // tr_bright
             // 
-            this.tr_bright.Location = new System.Drawing.Point(220, 22);
-            this.tr_bright.Maximum = 255;
+            this.tr_bright.Location = new System.Drawing.Point(118, 11);
+            this.tr_bright.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tr_bright.Maximum = 510;
             this.tr_bright.Name = "tr_bright";
-            this.tr_bright.Size = new System.Drawing.Size(936, 90);
+            this.tr_bright.Size = new System.Drawing.Size(504, 45);
             this.tr_bright.TabIndex = 0;
+            this.tr_bright.Value = 255;
             this.tr_bright.Scroll += new System.EventHandler(this.tr_bright_Scroll);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 34);
+            this.label1.Location = new System.Drawing.Point(17, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 24);
+            this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "밝기";
             // 
             // tr_gamma
             // 
-            this.tr_gamma.Location = new System.Drawing.Point(220, 214);
+            this.tr_gamma.Location = new System.Drawing.Point(118, 107);
+            this.tr_gamma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tr_gamma.Maximum = 200;
             this.tr_gamma.Name = "tr_gamma";
-            this.tr_gamma.Size = new System.Drawing.Size(936, 90);
+            this.tr_gamma.Size = new System.Drawing.Size(504, 45);
             this.tr_gamma.TabIndex = 0;
             this.tr_gamma.Value = 100;
             this.tr_gamma.Scroll += new System.EventHandler(this.tr_gamma_Scroll);
@@ -92,17 +98,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 226);
+            this.label3.Location = new System.Drawing.Point(17, 113);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 24);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 1;
             this.label3.Text = "감마";
             // 
             // tb_bright
             // 
-            this.tb_bright.Location = new System.Drawing.Point(107, 31);
+            this.tb_bright.Location = new System.Drawing.Point(58, 16);
+            this.tb_bright.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_bright.Name = "tb_bright";
-            this.tb_bright.Size = new System.Drawing.Size(100, 35);
+            this.tb_bright.Size = new System.Drawing.Size(56, 21);
             this.tb_bright.TabIndex = 2;
             this.tb_bright.Text = "0";
             this.tb_bright.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -111,31 +119,33 @@
             // 
             // tb_contrast
             // 
-            this.tb_contrast.Location = new System.Drawing.Point(107, 127);
+            this.tb_contrast.Location = new System.Drawing.Point(58, 64);
+            this.tb_contrast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_contrast.Name = "tb_contrast";
-            this.tb_contrast.Size = new System.Drawing.Size(100, 35);
+            this.tb_contrast.Size = new System.Drawing.Size(56, 21);
             this.tb_contrast.TabIndex = 2;
-            this.tb_contrast.Text = "100";
+            this.tb_contrast.Text = "0";
             this.tb_contrast.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_contrast.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tb_contrast.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigit);
             // 
             // tb_gamma
             // 
-            this.tb_gamma.Location = new System.Drawing.Point(107, 226);
+            this.tb_gamma.Location = new System.Drawing.Point(58, 113);
+            this.tb_gamma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_gamma.Name = "tb_gamma";
-            this.tb_gamma.Size = new System.Drawing.Size(100, 35);
+            this.tb_gamma.Size = new System.Drawing.Size(56, 21);
             this.tb_gamma.TabIndex = 2;
-            this.tb_gamma.Text = "100";
+            this.tb_gamma.Text = "0";
             this.tb_gamma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_gamma.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tb_gamma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigit);
             // 
             // PixelProcForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 330);
+            this.ClientSize = new System.Drawing.Size(634, 165);
             this.Controls.Add(this.tb_gamma);
             this.Controls.Add(this.tb_contrast);
             this.Controls.Add(this.tb_bright);
@@ -145,6 +155,7 @@
             this.Controls.Add(this.tr_gamma);
             this.Controls.Add(this.tr_bright);
             this.Controls.Add(this.tr_contrast);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PixelProcForm";
             this.Text = "밝기 / 대비 / 감마 조절";
             ((System.ComponentModel.ISupportInitialize)(this.tr_contrast)).EndInit();
