@@ -29,14 +29,17 @@ namespace IPTP
         {
             return src;
         }
+
         public Mat getDst()
         {
             return dst;
         }
+
         public void setSrc(Mat src)
         {
             this.src = src;
         }
+
         public void setDst(Mat dst)
         {
             this.dst = dst;
@@ -122,7 +125,6 @@ namespace IPTP
 
         private void btn_pixelProc_Click(object sender, EventArgs e)
         {
-
             if (src == null) return;
 
             if (!pixelProcForm.Visible)
@@ -137,21 +139,72 @@ namespace IPTP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void but_Histogram_Click(object sender, EventArgs e)
         {
             if (src == null) return;
 
-            if (!histogram.Visible)
+            // Histogram view
+            const int Width = 260, Height = 200;
+            Mat render = new Mat(new OpenCvSharp.Size(Width, Height), MatType.CV_8UC3, Scalar.All(255));
+            VectorOfMat vectorOfMat = new VectorOfMat();
+            Mat[] rgb = new Mat[3];
+            Cv2.Split(src, out rgb);
+            pb_dst.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(render);
+
+            // Calculate histogram
+            Mat hist = new Mat();
+            int[] hdims = { 256 }; // Histogram size for each dimension
+            Rangef[] ranges = { new Rangef(0, 256), }; // min/max
+            Cv2.CalcHist(
+                new Mat[] { src },
+                new int[] { 0 },
+                null,
+                hist,
+                1,
+                hdims,
+                ranges);
+
+            // Get the max value of histogram
+            double minVal, maxVal;
+            Cv2.MinMaxLoc(hist, out minVal, out maxVal);
+            Scalar color = Scalar.All(100);
+            // Scales and draws histogram
+            hist = hist * (maxVal != 0 ? Height / maxVal : 0.0);
+
+            for (int j = 0; j < hdims[0]; ++j)
             {
-                histogram.Show();
+                int binW = (int)((double)Width / hdims[0]);
+                render.Rectangle(
+                    new OpenCvSharp.Point(j * binW, render.Rows - (int)(hist.Get<float>(j))),
+                    new OpenCvSharp.Point((j + 1) * binW, render.Rows),
+                    color,
+                    -1);
             }
-            else
+
+            pb_dst.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(render);
+            using (new Window("Histogram", WindowMode.AutoSize | WindowMode.FreeRatio, rgb[0]))
             {
-                histogram.Hide();
+                Cv2.WaitKey();
             }
+            using (new Window("Histogram", WindowMode.AutoSize | WindowMode.FreeRatio, rgb[1]))
+            {
+                Cv2.WaitKey();
+            }
+            using (new Window("Histogram", WindowMode.AutoSize | WindowMode.FreeRatio, rgb[2]))
+            {
+                Cv2.WaitKey();
+            }
+            /*
+        if (!histogram.Visible)
+        {
+            histogram.Show();
+        }
+        else
+        {
+            histogram.Hide();
+        }*/
         }
     }
 }

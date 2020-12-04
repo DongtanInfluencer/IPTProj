@@ -44,6 +44,7 @@
             this.pb_Histogram_grayScale.Location = new System.Drawing.Point(28, 47);
             this.pb_Histogram_grayScale.Name = "pb_Histogram_grayScale";
             this.pb_Histogram_grayScale.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_grayScale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_grayScale.TabIndex = 0;
             this.pb_Histogram_grayScale.TabStop = false;
             // 
@@ -53,6 +54,7 @@
             this.pb_Histogram_Red.Location = new System.Drawing.Point(229, 47);
             this.pb_Histogram_Red.Name = "pb_Histogram_Red";
             this.pb_Histogram_Red.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Red.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_Red.TabIndex = 1;
             this.pb_Histogram_Red.TabStop = false;
             // 
@@ -62,6 +64,7 @@
             this.pb_Histogram_Green.Location = new System.Drawing.Point(429, 47);
             this.pb_Histogram_Green.Name = "pb_Histogram_Green";
             this.pb_Histogram_Green.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_Green.TabIndex = 2;
             this.pb_Histogram_Green.TabStop = false;
             // 
@@ -71,6 +74,7 @@
             this.pb_Histogram_Blue.Location = new System.Drawing.Point(624, 47);
             this.pb_Histogram_Blue.Name = "pb_Histogram_Blue";
             this.pb_Histogram_Blue.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Blue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_Blue.TabIndex = 3;
             this.pb_Histogram_Blue.TabStop = false;
             // 
