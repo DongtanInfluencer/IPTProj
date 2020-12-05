@@ -114,6 +114,12 @@ namespace IPTP
             Cv2.BoxFilter(history, dst, MatType.CV_8UC3, new OpenCvSharp.Size(9, 9), new OpenCvSharp.Point(-1, -1), true, BorderTypes.Default);
             form.updateDst();
         }
+        private void BilateralBlur(int value)
+        {
+            Mat dst = form.getDst();
+            Cv2.BilateralFilter(history, dst, value, 3, 3, BorderTypes.Default);
+            form.updateDst();
+        }
 
     }
 }
