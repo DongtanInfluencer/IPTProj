@@ -38,31 +38,37 @@ namespace IPTP
         private void btn_averageBlur_Click(object sender, EventArgs e)
         {
             mode = AVRG_BLUR;
+            update((TrB_value.Value * 2) - 1);
         }
 
         private void btn_GaussianBlur_Click(object sender, EventArgs e)
         {
             mode = GAUS_BLUR;
+            update((TrB_value.Value * 2) - 1);
         }
 
         private void btn_BoxBlur_Click(object sender, EventArgs e)
         {
             mode = BOX_BLUR;
+            update((TrB_value.Value * 2) - 1);
         }
 
         private void btn_BilateralBlur_Click(object sender, EventArgs e)
         {
             mode = BI_BLUR;
+            update((TrB_value.Value * 2) - 1);
         }
 
         private void btn_medianBlur_Click(object sender, EventArgs e)
         {
             mode = MEDI_BLUR;
+            update((TrB_value.Value * 2) - 1);
         }
 
         private void btn_Sharpening_Click(object sender, EventArgs e)
         {
             mode = SARPNING;
+            Sharpening();
         }
 
         private void TrB_value_Scroll(object sender, EventArgs e)
@@ -91,11 +97,14 @@ namespace IPTP
                 case BI_BLUR:
                     BilateralBlur(value);
                     break;
-                case SARPNING:
-                    break;
                 default:
                     return;
             }
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void AvrgBlur(int value)
@@ -120,13 +129,22 @@ namespace IPTP
         private void BilateralBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.BilateralFilter(history, dst, value, 3, 3, BorderTypes.Default);
+            Cv2.BilateralFilter(history, dst, value, value/3, value/3, BorderTypes.Default);
             form.updateDst();
         }
         private void MedianBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.MedianBlur(history, dst, value*value);
+            Cv2.MedianBlur(history, dst, value);
+            form.updateDst();
+        }
+        private void Sharpening()
+        {
+            Mat dst = form.getDst();
+            float[] data = new float[9] { -1, -1, -1, -1, 9, -1, -1, -1, -1 };
+            Mat kernel = new Mat(3, 3, MatType.CV_32F, data);
+
+            Cv2.Filter2D(history, dst, history.Type(), kernel, new OpenCvSharp.Point(0, 0));
             form.updateDst();
         }
 

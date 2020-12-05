@@ -36,6 +36,7 @@
             this.btn_Sharpening = new System.Windows.Forms.Button();
             this.btn_BoxBlur = new System.Windows.Forms.Button();
             this.btn_BilateralBlur = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TrB_value)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,11 +122,22 @@
             this.btn_BilateralBlur.UseVisualStyleBackColor = true;
             this.btn_BilateralBlur.Click += new System.EventHandler(this.btn_BilateralBlur_Click);
             // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(12, 355);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(135, 44);
+            this.btn_reset.TabIndex = 9;
+            this.btn_reset.Text = "되돌리기";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            // 
             // BlurNSharpeningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(216, 411);
+            this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_BilateralBlur);
             this.Controls.Add(this.btn_BoxBlur);
             this.Controls.Add(this.btn_Sharpening);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Button btn_Sharpening;
         private System.Windows.Forms.Button btn_BoxBlur;
         private System.Windows.Forms.Button btn_BilateralBlur;
+        private System.Windows.Forms.Button btn_reset;
     }
 }
