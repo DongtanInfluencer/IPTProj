@@ -1,6 +1,6 @@
 ﻿namespace IPTP
 {
-    partial class Histogram
+    partial class HistogramForm
     {
         /// <summary>
         /// Required designer variable.

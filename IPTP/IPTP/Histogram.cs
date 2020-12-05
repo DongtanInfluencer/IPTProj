@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace IPTP
 {
-    public partial class Histogram : Form
+    public partial class HistogramForm : Form
     {
         private Form1 form = null;
         private Mat history = null;
 
-        public Histogram(Form1 form)
+        public HistogramForm(Form1 form)
         {
             InitializeComponent();
             this.form = form;
