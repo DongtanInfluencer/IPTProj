@@ -147,7 +147,7 @@
             this.Controls.Add(this.TrB_value);
             this.Controls.Add(this.btn_averageBlur);
             this.Name = "BlurNSharpeningForm";
-            this.Text = "BlurNSharpeningForm";
+            this.Text = "BNS";
             ((System.ComponentModel.ISupportInitialize)(this.TrB_value)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
