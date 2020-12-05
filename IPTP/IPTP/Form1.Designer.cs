@@ -37,6 +37,7 @@
             this.btn_convert = new System.Windows.Forms.Button();
             this.btn_pixelProc = new System.Windows.Forms.Button();
             this.but_Histogram = new System.Windows.Forms.Button();
+            this.btn_blurNsharpe = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_src)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).BeginInit();
             this.SuspendLayout();
@@ -138,11 +139,23 @@
             this.but_Histogram.UseVisualStyleBackColor = true;
             this.but_Histogram.Click += new System.EventHandler(this.but_Histogram_Click);
             // 
+            // btn_blurNsharpe
+            // 
+            this.btn_blurNsharpe.Location = new System.Drawing.Point(650, 116);
+            this.btn_blurNsharpe.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_blurNsharpe.Name = "btn_blurNsharpe";
+            this.btn_blurNsharpe.Size = new System.Drawing.Size(130, 29);
+            this.btn_blurNsharpe.TabIndex = 6;
+            this.btn_blurNsharpe.Text = "블러링 / 샤프닝";
+            this.btn_blurNsharpe.UseVisualStyleBackColor = true;
+            this.btn_blurNsharpe.Click += new System.EventHandler(this.btn_blurNsharpe_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 391);
+            this.Controls.Add(this.btn_blurNsharpe);
             this.Controls.Add(this.but_Histogram);
             this.Controls.Add(this.btn_pixelProc);
             this.Controls.Add(this.btn_convert);
@@ -155,7 +168,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "영상처리 기말프로젝트 1팀";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_src)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).EndInit();
             this.ResumeLayout(false);
@@ -174,6 +186,7 @@
         private System.Windows.Forms.Button btn_convert;
         private System.Windows.Forms.Button btn_pixelProc;
         private System.Windows.Forms.Button but_Histogram;
+        private System.Windows.Forms.Button btn_blurNsharpe;
     }
 }
 

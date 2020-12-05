@@ -45,7 +45,7 @@
             // tr_contrast
             // 
             this.tr_contrast.Location = new System.Drawing.Point(118, 59);
-            this.tr_contrast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tr_contrast.Margin = new System.Windows.Forms.Padding(2);
             this.tr_contrast.Maximum = 200;
             this.tr_contrast.Name = "tr_contrast";
             this.tr_contrast.Size = new System.Drawing.Size(504, 45);
@@ -66,7 +66,7 @@
             // tr_bright
             // 
             this.tr_bright.Location = new System.Drawing.Point(118, 11);
-            this.tr_bright.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tr_bright.Margin = new System.Windows.Forms.Padding(2);
             this.tr_bright.Maximum = 510;
             this.tr_bright.Name = "tr_bright";
             this.tr_bright.Size = new System.Drawing.Size(504, 45);
@@ -87,7 +87,7 @@
             // tr_gamma
             // 
             this.tr_gamma.Location = new System.Drawing.Point(118, 107);
-            this.tr_gamma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tr_gamma.Margin = new System.Windows.Forms.Padding(2);
             this.tr_gamma.Maximum = 200;
             this.tr_gamma.Name = "tr_gamma";
             this.tr_gamma.Size = new System.Drawing.Size(504, 45);
@@ -108,7 +108,7 @@
             // tb_bright
             // 
             this.tb_bright.Location = new System.Drawing.Point(58, 16);
-            this.tb_bright.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_bright.Margin = new System.Windows.Forms.Padding(2);
             this.tb_bright.Name = "tb_bright";
             this.tb_bright.Size = new System.Drawing.Size(56, 21);
             this.tb_bright.TabIndex = 2;
@@ -120,7 +120,7 @@
             // tb_contrast
             // 
             this.tb_contrast.Location = new System.Drawing.Point(58, 64);
-            this.tb_contrast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_contrast.Margin = new System.Windows.Forms.Padding(2);
             this.tb_contrast.Name = "tb_contrast";
             this.tb_contrast.Size = new System.Drawing.Size(56, 21);
             this.tb_contrast.TabIndex = 2;
@@ -132,7 +132,7 @@
             // tb_gamma
             // 
             this.tb_gamma.Location = new System.Drawing.Point(58, 113);
-            this.tb_gamma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_gamma.Margin = new System.Windows.Forms.Padding(2);
             this.tb_gamma.Name = "tb_gamma";
             this.tb_gamma.Size = new System.Drawing.Size(56, 21);
             this.tb_gamma.TabIndex = 2;
@@ -155,9 +155,10 @@
             this.Controls.Add(this.tr_gamma);
             this.Controls.Add(this.tr_bright);
             this.Controls.Add(this.tr_contrast);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PixelProcForm";
             this.Text = "밝기 / 대비 / 감마 조절";
+            this.Load += new System.EventHandler(this.PixelProcForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tr_contrast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tr_bright)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tr_gamma)).EndInit();
