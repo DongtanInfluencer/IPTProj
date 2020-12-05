@@ -146,7 +146,7 @@
             this.btn_blurNsharpe.Name = "btn_blurNsharpe";
             this.btn_blurNsharpe.Size = new System.Drawing.Size(130, 29);
             this.btn_blurNsharpe.TabIndex = 6;
-            this.btn_blurNsharpe.Text = "블러링 / 샤프닝";
+            this.btn_blurNsharpe.Text = "블러링/샤프닝";
             this.btn_blurNsharpe.UseVisualStyleBackColor = true;
             this.btn_blurNsharpe.Click += new System.EventHandler(this.btn_blurNsharpe_Click);
             // 
