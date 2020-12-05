@@ -145,16 +145,15 @@ namespace IPTP
         {
             if (src == null) return;
 
-        if (!histogram.Visible)
-        {
-            histogram.Show();
+            if (!histogram.Visible)
+            {
+                histogram.Show();
+            }
+            else
+            {
+                histogram.Dispose();
+                histogram = new Histogram(this);
+            }
         }
-        else
-        {
-            histogram.Hide();
-        }
-        }
-
-        
     }
 }

@@ -21,12 +21,12 @@ namespace IPTP
             base.OnActivated(e);
             Mat dst = form.getDst();
             updateHistogram(dst);
-            
         }
+
         private void Btn_HistogramEqual_Click(object sender, System.EventArgs e)
         {
             Mat dst = form.getDst();
-            if(history == null && history != dst) history = dst.Clone(); // 히스토리 만들기
+            if (history == null && history != dst) history = dst.Clone(); // 히스토리 만들기
 
             Mat[] rgb = Cv2.Split(dst);
             //채널별 평탄화
@@ -40,6 +40,7 @@ namespace IPTP
             form.updateDst();
             updateHistogram(form.getDst());
         }
+
         private void btn_HistogramBinary_Click(object sender, EventArgs e)
         {
             Mat dst = form.getDst();
@@ -56,6 +57,7 @@ namespace IPTP
             form.updateDst();
             updateHistogram(form.getDst());
         }
+
         private void btn_Reset_Click(object sender, EventArgs e)
         {
             if (history == null) return;
@@ -65,7 +67,6 @@ namespace IPTP
             updateHistogram(form.getDst());
         }
 
-
         private void updateHistogram(Mat dst)
         {
             Mat[] rgb = Cv2.Split(dst);
@@ -73,11 +74,10 @@ namespace IPTP
             pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[0], 0));
             pb_Histogram_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[1], 1));
             pb_Histogram_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[2], 2));
-
         }
+
         private Mat MatToHistogram(Mat histogram, int rgbCode)
         {
-
             const int Width = 260, Height = 200;
             Mat render = new Mat(new OpenCvSharp.Size(Width, Height), MatType.CV_8UC3, Scalar.All(255));
 
@@ -103,12 +103,15 @@ namespace IPTP
                 case 0:
                     color = Scalar.Blue;
                     break;
+
                 case 1:
                     color = Scalar.Green;
                     break;
+
                 case 2:
                     color = Scalar.Red;
                     break;
+
                 default:
                     color = Scalar.All(100);
                     break;
@@ -128,5 +131,8 @@ namespace IPTP
             return render;
         }
 
+        private void Histogram_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

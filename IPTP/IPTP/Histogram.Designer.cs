@@ -112,6 +112,7 @@
             this.Controls.Add(this.pb_Histogram_Red);
             this.Name = "Histogram";
             this.Text = "Histogram";
+            this.Load += new System.EventHandler(this.Histogram_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Red)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Green)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Blue)).EndInit();
