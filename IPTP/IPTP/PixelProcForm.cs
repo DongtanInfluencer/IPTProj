@@ -1,12 +1,5 @@
 ﻿using OpenCvSharp;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IPTP
@@ -14,6 +7,7 @@ namespace IPTP
     public partial class PixelProcForm : Form
     {
         private Form1 form = null;
+
         public PixelProcForm(Form1 form)
         {
             InitializeComponent();
@@ -30,8 +24,8 @@ namespace IPTP
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
+
         private byte[] _CalcLut()
         {
             byte[] lut = new byte[256];
@@ -80,7 +74,7 @@ namespace IPTP
 
         private void tr_gamma_Scroll(object sender, EventArgs e)
         {
-            double gamma = (double) tr_gamma.Value / 100;
+            double gamma = (double)tr_gamma.Value / 100;
             tb_gamma.Text = gamma.ToString();
             update();
         }

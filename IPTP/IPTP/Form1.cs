@@ -11,11 +11,13 @@ namespace IPTP
         private Mat dst = null;
 
         private PixelProcForm pixelProcForm = null;
+        private Histogram histogram = null;
 
         public Form1()
         {
             InitializeComponent();
             pixelProcForm = new PixelProcForm(this);
+            histogram = new Histogram(this);
         }
 
         public void updateSrc()
@@ -27,14 +29,17 @@ namespace IPTP
         {
             return src;
         }
+
         public Mat getDst()
         {
             return dst;
         }
+
         public void setSrc(Mat src)
         {
             this.src = src;
         }
+
         public void setDst(Mat dst)
         {
             this.dst = dst;
@@ -120,6 +125,8 @@ namespace IPTP
 
         private void btn_pixelProc_Click(object sender, EventArgs e)
         {
+            if (src == null) return;
+
             if (!pixelProcForm.Visible)
             {
                 pixelProcForm.Show();
@@ -132,7 +139,22 @@ namespace IPTP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
+
+        private void but_Histogram_Click(object sender, EventArgs e)
+        {
+            if (src == null) return;
+
+        if (!histogram.Visible)
+        {
+            histogram.Show();
+        }
+        else
+        {
+            histogram.Hide();
+        }
+        }
+
+        
     }
 }
