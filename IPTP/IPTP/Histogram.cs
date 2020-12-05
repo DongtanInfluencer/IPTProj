@@ -13,19 +13,35 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
+
+            
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
             src = form.getSrc();
             dst = form.getDst();
 
-            if (src != null)
-                pb_Histogram_grayScale.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(src);
-            //showHistogram();
+            Mat gray = new Mat(dst.Size(), MatType.CV_8UC1);
+            Cv2.CvtColor(dst, gray, ColorConversionCodes.BGR2GRAY);
+            var rgb = Cv2.Split(dst);
+            //Mat[] rgb = new Mat[3];
+            //Cv2.Split(dst, out rgb);
+
+            pb_Histogram_grayScale.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(gray));
+            pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[0]));
+            pb_Histogram_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[1]));
+            pb_Histogram_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[2]));
+            //pb_Histogram_grayScale.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(gray);
+            //pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(rgb[0]);
+            //pb_Histogram_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(rgb[1]);
+            //pb_Histogram_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(rgb[2]);
+
+
         }
-
-        public void showHistogram()
+        private Mat MatToHistogram(Mat histogram)
         {
-            if (src == null) return;
 
-            // Histogram view
             const int Width = 260, Height = 200;
             Mat render = new Mat(new OpenCvSharp.Size(Width, Height), MatType.CV_8UC3, Scalar.All(255));
 
@@ -59,10 +75,7 @@ namespace IPTP
                     -1);
             }
 
-            using (new Window("Image", WindowMode.AutoSize | WindowMode.FreeRatio, src))
-            using (new Window("Histogram", WindowMode.AutoSize | WindowMode.FreeRatio, render))
-
-                pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hist);
+            return render;
         }
     }
 }

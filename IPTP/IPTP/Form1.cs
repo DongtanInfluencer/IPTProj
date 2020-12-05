@@ -145,28 +145,8 @@ namespace IPTP
         {
             if (src == null) return;
 
-            // Histogram view
-            Mat[] rgb = new Mat[3];
-            Cv2.Split(src, out rgb);
-            pb_dst.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[1]));
-
-
-
-
-            /*
-            using (new Window("Histogram", WindowMode.AutoSize | WindowMode.FreeRatio, MatToHistogram(rgb[0])))
-            {
-                Cv2.WaitKey();
-            }
-            using (new Window("Histogram", WindowMode.AutoSize | WindowMode.FreeRatio, MatToHistogram(rgb[1])))
-            {
-                Cv2.WaitKey();
-            }*/
-            using (new Window("Histogram", WindowMode.AutoSize | WindowMode.FreeRatio, MatToHistogram(rgb[2])))
-            {
-                Cv2.WaitKey();
-            }
-            /*
+        // Histogram view
+            
         if (!histogram.Visible)
         {
             histogram.Show();
@@ -174,46 +154,9 @@ namespace IPTP
         else
         {
             histogram.Hide();
-        }*/
+        }
         }
 
-        private Mat MatToHistogram(Mat histogram)
-        {
-
-            const int Width = 260, Height = 200;
-            Mat render = new Mat(new OpenCvSharp.Size(Width, Height), MatType.CV_8UC3, Scalar.All(255));
-           
-            // Calculate histogram
-            Mat hist = new Mat();
-            int[] hdims = { 256 }; // Histogram size for each dimension
-            Rangef[] ranges = { new Rangef(0, 256), }; // min/max
-            Cv2.CalcHist(
-                new Mat[] { src },
-                new int[] { 0 },
-                null,
-                hist,
-                1,
-                hdims,
-                ranges);
-
-            // Get the max value of histogram
-            double minVal, maxVal;
-            Cv2.MinMaxLoc(hist, out minVal, out maxVal);
-            Scalar color = Scalar.All(100);
-            // Scales and draws histogram
-            hist = hist * (maxVal != 0 ? Height / maxVal : 0.0);
-
-            for (int j = 0; j < hdims[0]; ++j)
-            {
-                int binW = (int)((double)Width / hdims[0]);
-                render.Rectangle(
-                    new OpenCvSharp.Point(j * binW, render.Rows - (int)(hist.Get<float>(j))),
-                    new OpenCvSharp.Point((j + 1) * binW, render.Rows),
-                    color,
-                    -1);
-            }
-
-            return render;
-        }
+        
     }
 }
