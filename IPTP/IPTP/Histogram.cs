@@ -29,12 +29,12 @@ namespace IPTP
         {
             Mat[] rgb = Cv2.Split(dst);
 
-            pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[0]));
-            pb_Histogram_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[1]));
-            pb_Histogram_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[2]));
+            pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[0],0));
+            pb_Histogram_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[1],1));
+            pb_Histogram_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[2],2));
 
         }
-        private Mat MatToHistogram(Mat histogram)
+        private Mat MatToHistogram(Mat histogram,int rgbCode)
         {
 
             const int Width = 260, Height = 200;
@@ -56,7 +56,23 @@ namespace IPTP
             // Get the max value of histogram
             double minVal, maxVal;
             Cv2.MinMaxLoc(hist, out minVal, out maxVal);
-            Scalar color = Scalar.All(100);
+            Scalar color;
+            switch (rgbCode)
+            {
+                case 0:
+                    color = Scalar.Blue;
+                    break;
+                case 1:
+                    color = Scalar.Green;
+                    break;
+                case 2:
+                    color = Scalar.Red;
+                    break;
+                default:
+                    color = Scalar.All(100);
+                    break;
+            }
+
             // Scales and draws histogram
             hist = hist * (maxVal != 0 ? Height / maxVal : 0.0);
 
@@ -88,9 +104,5 @@ namespace IPTP
 
         }
 
-        private void pb_Histogram_Green_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

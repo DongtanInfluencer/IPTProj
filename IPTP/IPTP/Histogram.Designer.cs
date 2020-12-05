@@ -56,7 +56,6 @@
             this.pb_Histogram_Green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_Green.TabIndex = 2;
             this.pb_Histogram_Green.TabStop = false;
-            this.pb_Histogram_Green.Click += new System.EventHandler(this.pb_Histogram_Green_Click);
             // 
             // pb_Histogram_Blue
             // 
