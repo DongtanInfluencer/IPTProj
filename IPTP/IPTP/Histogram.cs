@@ -17,7 +17,7 @@ namespace IPTP
             
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+        private void Btn_ShowHistogram(object sender, System.EventArgs e)
         {
             src = form.getSrc();
             dst = form.getDst();

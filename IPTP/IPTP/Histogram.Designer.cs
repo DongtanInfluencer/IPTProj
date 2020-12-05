@@ -32,7 +32,7 @@
             this.pb_Histogram_Red = new System.Windows.Forms.PictureBox();
             this.pb_Histogram_Green = new System.Windows.Forms.PictureBox();
             this.pb_Histogram_Blue = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_HIstogramShow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_grayScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Green)).BeginInit();
@@ -79,22 +79,22 @@
             this.pb_Histogram_Blue.TabIndex = 3;
             this.pb_Histogram_Blue.TabStop = false;
             // 
-            // button1
+            // Btn_HIstogramShow
             // 
-            this.button1.Location = new System.Drawing.Point(28, 268);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_HIstogramShow.Location = new System.Drawing.Point(28, 268);
+            this.Btn_HIstogramShow.Name = "Btn_HIstogramShow";
+            this.Btn_HIstogramShow.Size = new System.Drawing.Size(150, 33);
+            this.Btn_HIstogramShow.TabIndex = 4;
+            this.Btn_HIstogramShow.Text = "히스토그램 표시";
+            this.Btn_HIstogramShow.UseVisualStyleBackColor = true;
+            this.Btn_HIstogramShow.Click += new System.EventHandler(this.Btn_ShowHistogram);
             // 
             // Histogram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(800, 326);
+            this.Controls.Add(this.Btn_HIstogramShow);
             this.Controls.Add(this.pb_Histogram_Blue);
             this.Controls.Add(this.pb_Histogram_Green);
             this.Controls.Add(this.pb_Histogram_Red);
@@ -115,6 +115,6 @@
         private System.Windows.Forms.PictureBox pb_Histogram_Red;
         private System.Windows.Forms.PictureBox pb_Histogram_Green;
         private System.Windows.Forms.PictureBox pb_Histogram_Blue;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_HIstogramShow;
     }
 }
