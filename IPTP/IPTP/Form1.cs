@@ -130,15 +130,17 @@ namespace IPTP
         {
             pixelProcForm = BtnAction(pixelProcForm, PPForm);
         }
+
         private void but_Histogram_Click(object sender, EventArgs e)
         {
             histogramForm = BtnAction(histogramForm, HForm);
         }
+
         private void btn_blurNsharpe_Click(object sender, EventArgs e)
         {
             blurNSharpeningForm = BtnAction(blurNSharpeningForm, BNSForm);
         }
-        
+
         private Form BtnAction(Form form, int formType)
         {
             if (src == null) return null;
