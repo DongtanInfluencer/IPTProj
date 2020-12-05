@@ -99,7 +99,7 @@
             this.btn_HistogramBinary.UseVisualStyleBackColor = true;
             this.btn_HistogramBinary.Click += new System.EventHandler(this.btn_HistogramBinary_Click);
             // 
-            // Histogram
+            // HistogramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,7 +110,7 @@
             this.Controls.Add(this.pb_Histogram_Blue);
             this.Controls.Add(this.pb_Histogram_Green);
             this.Controls.Add(this.pb_Histogram_Red);
-            this.Name = "Histogram";
+            this.Name = "HistogramForm";
             this.Text = "Histogram";
             this.Load += new System.EventHandler(this.Histogram_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Red)).EndInit();

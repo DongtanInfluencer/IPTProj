@@ -50,7 +50,7 @@
             // TrB_value
             // 
             this.TrB_value.Location = new System.Drawing.Point(153, 12);
-            this.TrB_value.Maximum = 15;
+            this.TrB_value.Maximum = 25;
             this.TrB_value.Minimum = 1;
             this.TrB_value.Name = "TrB_value";
             this.TrB_value.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -58,7 +58,7 @@
             this.TrB_value.SmallChange = 2;
             this.TrB_value.TabIndex = 2;
             this.TrB_value.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.TrB_value.Value = 3;
+            this.TrB_value.Value = 1;
             this.TrB_value.Scroll += new System.EventHandler(this.TrB_value_Scroll);
             // 
             // tb_value
@@ -66,8 +66,7 @@
             this.tb_value.Location = new System.Drawing.Point(153, 378);
             this.tb_value.Name = "tb_value";
             this.tb_value.Size = new System.Drawing.Size(45, 21);
-            this.tb_value.TabIndex = 3;
-            this.tb_value.Text = "3";
+            this.tb_value.TabIndex = 1;
             this.tb_value.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_GaussianBlur
