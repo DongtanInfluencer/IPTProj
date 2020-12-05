@@ -120,6 +120,12 @@ namespace IPTP
             Cv2.BilateralFilter(history, dst, value, 3, 3, BorderTypes.Default);
             form.updateDst();
         }
+        private void MedianBlur(int value)
+        {
+            Mat dst = form.getDst();
+            Cv2.MedianBlur(history, dst, value*value);
+            form.updateDst();
+        }
 
     }
 }
