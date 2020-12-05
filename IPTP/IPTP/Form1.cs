@@ -145,8 +145,6 @@ namespace IPTP
         {
             if (src == null) return;
 
-        // Histogram view
-            
         if (!histogram.Visible)
         {
             histogram.Show();

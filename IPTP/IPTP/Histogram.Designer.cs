@@ -32,6 +32,8 @@
             this.pb_Histogram_Green = new System.Windows.Forms.PictureBox();
             this.pb_Histogram_Blue = new System.Windows.Forms.PictureBox();
             this.Btn_HistogramEqual = new System.Windows.Forms.Button();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.btn_HistogramBinary = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Green)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Blue)).BeginInit();
@@ -77,11 +79,33 @@
             this.Btn_HistogramEqual.UseVisualStyleBackColor = true;
             this.Btn_HistogramEqual.Click += new System.EventHandler(this.Btn_HistogramEqual_Click);
             // 
+            // btn_Reset
+            // 
+            this.btn_Reset.Location = new System.Drawing.Point(416, 205);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(150, 33);
+            this.btn_Reset.TabIndex = 6;
+            this.btn_Reset.Text = "되돌리기";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
+            // 
+            // btn_HistogramBinary
+            // 
+            this.btn_HistogramBinary.Location = new System.Drawing.Point(221, 205);
+            this.btn_HistogramBinary.Name = "btn_HistogramBinary";
+            this.btn_HistogramBinary.Size = new System.Drawing.Size(150, 33);
+            this.btn_HistogramBinary.TabIndex = 7;
+            this.btn_HistogramBinary.Text = "히스토그램 이진화";
+            this.btn_HistogramBinary.UseVisualStyleBackColor = true;
+            this.btn_HistogramBinary.Click += new System.EventHandler(this.btn_HistogramBinary_Click);
+            // 
             // Histogram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 249);
+            this.Controls.Add(this.btn_HistogramBinary);
+            this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.Btn_HistogramEqual);
             this.Controls.Add(this.pb_Histogram_Blue);
             this.Controls.Add(this.pb_Histogram_Green);
@@ -100,5 +124,7 @@
         private System.Windows.Forms.PictureBox pb_Histogram_Green;
         private System.Windows.Forms.PictureBox pb_Histogram_Blue;
         private System.Windows.Forms.Button Btn_HistogramEqual;
+        private System.Windows.Forms.Button btn_Reset;
+        private System.Windows.Forms.Button btn_HistogramBinary;
     }
 }
