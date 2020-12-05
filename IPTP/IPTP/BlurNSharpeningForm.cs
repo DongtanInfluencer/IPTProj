@@ -18,7 +18,7 @@ namespace IPTP
         private int mode;
         private float[] weigths;
 
-        private const int NOT_USE = 0,AVRG_BLUR = 1, GAUS_BLUR = 2, MEDI_BLUR = 3, SARPNING = 4;
+        private const int NOT_USE = 0,AVRG_BLUR = 1, GAUS_BLUR = 2, MEDI_BLUR = 3,BOX_BLUR = 4, BI_BLUR = 5, SARPNING = 6;
 
         public BlurNSharpeningForm(Form1 form)
         {
@@ -38,17 +38,21 @@ namespace IPTP
         private void btn_averageBlur_Click(object sender, EventArgs e)
         {
             mode = AVRG_BLUR;
-            weigths = new float[]
-            {
-                1 / 9.0F, 1 / 9.0F, 1 / 9.0F,
-                1 / 9.0F, 1 / 9.0F, 1 / 9.0F,
-                1 / 9.0F, 1 / 9.0F, 1 / 9.0F
-            };
         }
 
         private void btn_GaussianBlur_Click(object sender, EventArgs e)
         {
             mode = GAUS_BLUR;
+        }
+
+        private void btn_BoxBlur_Click(object sender, EventArgs e)
+        {
+            mode = BOX_BLUR;
+        }
+
+        private void btn_BilateralBlur_Click(object sender, EventArgs e)
+        {
+            mode = BI_BLUR;
         }
 
         private void btn_medianBlur_Click(object sender, EventArgs e)
@@ -80,6 +84,10 @@ namespace IPTP
                     break;
                 case MEDI_BLUR:
                     break;
+                case BOX_BLUR:
+                    break;
+                case BI_BLUR:
+                    break;
                 case SARPNING:
                     break;
                 default:
@@ -100,6 +108,12 @@ namespace IPTP
             Cv2.GaussianBlur(history, dst, new OpenCvSharp.Size(value, value), 0, 0, BorderTypes.Default);
             form.updateDst();
         }
-        
+        private void BoxBlur(int value)
+        {
+            Mat dst = form.getDst();
+            Cv2.BoxFilter(history, dst, MatType.CV_8UC3, new OpenCvSharp.Size(9, 9), new OpenCvSharp.Point(-1, -1), true, BorderTypes.Default);
+            form.updateDst();
+        }
+
     }
 }
