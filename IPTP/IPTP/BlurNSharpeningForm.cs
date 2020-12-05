@@ -83,10 +83,13 @@ namespace IPTP
                     GausBlur(value);
                     break;
                 case MEDI_BLUR:
+                    MedianBlur(value);
                     break;
                 case BOX_BLUR:
+                    BoxBlur(value);
                     break;
                 case BI_BLUR:
+                    BilateralBlur(value);
                     break;
                 case SARPNING:
                     break;
