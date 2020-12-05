@@ -10,14 +10,17 @@ namespace IPTP
         private Mat src = null;
         private Mat dst = null;
 
-        private PixelProcForm pixelProcForm = null;
-        private HistogramForm histogram = null;
+        private Form pixelProcForm = null;
+        private Form histogramForm = null;
+        private Form blurNSharpeningForm = null;
+
+        private const int PPForm = 0;
+        private const int HForm = 1;
+        private const int BNSForm = 2;
 
         public Form1()
         {
             InitializeComponent();
-            //pixelProcForm = new PixelProcForm(this);
-            //histogram = new Histogram(this);
         }
 
         public void updateSrc()
@@ -125,36 +128,48 @@ namespace IPTP
 
         private void btn_pixelProc_Click(object sender, EventArgs e)
         {
-            if (src == null) return;
-
-            if (pixelProcForm == null || pixelProcForm.IsDisposed)
-            {
-                pixelProcForm = new PixelProcForm(this);
-                pixelProcForm.Show();
-            }
-            else
-            {
-                pixelProcForm.Dispose();
-            }
+            pixelProcForm = BtnAction(pixelProcForm, PPForm);
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
         private void but_Histogram_Click(object sender, EventArgs e)
         {
-            if (src == null) return;
+            histogramForm = BtnAction(histogramForm, HForm);
+        }
+        private void btn_blurNsharpe_Click(object sender, EventArgs e)
+        {
+            blurNSharpeningForm = BtnAction(blurNSharpeningForm, BNSForm);
+        }
+        
+        private Form BtnAction(Form form, int formType)
+        {
+            if (src == null) return null;
 
-            if (histogram == null || histogram.IsDisposed)
+            if (form == null || form.IsDisposed)
             {
-                histogram = new HistogramForm(this);
-                histogram.Show();
+                switch (formType)
+                {
+                    case PPForm:
+                        form = new PixelProcForm(this);
+                        break;
+
+                    case HForm:
+                        form = new HistogramForm(this);
+                        break;
+
+                    case BNSForm:
+                        form = new BlurNSharpeningForm(this);
+                        break;
+
+                    default:
+                        return null;
+                }
+
+                form.Show();
             }
             else
             {
-                histogram.Dispose();
+                form.Dispose();
             }
+            return form;
         }
     }
 }

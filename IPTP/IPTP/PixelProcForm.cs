@@ -78,5 +78,10 @@ namespace IPTP
             tb_gamma.Text = gamma.ToString();
             update();
         }
+
+        private void PixelProcForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
