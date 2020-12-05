@@ -16,7 +16,6 @@ namespace IPTP
         private Form1 form;
         private Mat history;
         private int mode;
-        private float[] weigths;
 
         private const int NOT_USE = 0,AVRG_BLUR = 1, GAUS_BLUR = 2, MEDI_BLUR = 3,BOX_BLUR = 4, BI_BLUR = 5, SARPNING = 6;
 
@@ -77,6 +76,11 @@ namespace IPTP
             tb_value.Text = value.ToString();
             update(value);
         }
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            form.setDst(history.Clone());
+            form.updateDst();
+        }
 
         private void update(int value)
         {
@@ -102,10 +106,6 @@ namespace IPTP
             }
         }
 
-        private void btn_reset_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void AvrgBlur(int value)
         {
