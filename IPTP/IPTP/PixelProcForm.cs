@@ -81,7 +81,6 @@ namespace IPTP
 
         private void PixelProcForm_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
