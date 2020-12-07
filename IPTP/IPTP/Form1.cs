@@ -9,14 +9,17 @@ namespace IPTP
     {
         private Mat src = null;
         private Mat dst = null;
+        private Mat history = null;
 
         private Form pixelProcForm = null;
         private Form histogramForm = null;
         private Form blurNSharpeningForm = null;
+        private Form colorForm = null;
 
         private const int PPForm = 0;
         private const int HForm = 1;
         private const int BNSForm = 2;
+        private const int CForm = 3;
 
         public Form1()
         {
@@ -69,6 +72,7 @@ namespace IPTP
                 updateSrc();
                 dst = src.Clone();
                 updateDst();
+                history = src.Clone();
             }
         }
 
@@ -141,6 +145,11 @@ namespace IPTP
             blurNSharpeningForm = BtnAction(blurNSharpeningForm, BNSForm);
         }
 
+        private void btn_color_Click(object sender, EventArgs e)
+        {
+            colorForm = BtnAction(colorForm, CForm);
+        }
+
         private Form BtnAction(Form form, int formType)
         {
             if (src == null) return null;
@@ -161,6 +170,10 @@ namespace IPTP
                         form = new BlurNSharpeningForm(this);
                         break;
 
+                    case CForm:
+                        form = new ColorForm(this);
+                        break;
+
                     default:
                         return null;
                 }
@@ -176,13 +189,13 @@ namespace IPTP
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
-            if(src == null)
+            if (history == null)
             {
                 return;
             }
 
-            dst = src.Clone();
-            updateDst();
+            src = history.Clone();
+            updateSrc();
         }
     }
 }

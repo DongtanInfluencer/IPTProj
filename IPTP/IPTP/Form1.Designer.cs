@@ -173,6 +173,7 @@
             this.btn_color.TabIndex = 8;
             this.btn_color.Text = "컬러영상 처리";
             this.btn_color.UseVisualStyleBackColor = true;
+            this.btn_color.Click += new System.EventHandler(this.btn_color_Click);
             // 
             // btn_Segmentation
             // 

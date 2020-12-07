@@ -22,7 +22,7 @@ namespace IPTP
         {
             base.OnActivated(e);
             mode = NOT_USE;
-            history = form.getDst().Clone();
+            history = form.getSrc().Clone();
             tb_value.Text = (TrB_value.Value * 2 - 1).ToString();
         }
 
@@ -121,7 +121,7 @@ namespace IPTP
         private void BoxBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.BoxFilter(history, dst, MatType.CV_8UC3, new OpenCvSharp.Size(9, 9), new OpenCvSharp.Point(-1, -1), true, BorderTypes.Default);
+            Cv2.BoxFilter(history, dst, MatType.CV_8UC3, new OpenCvSharp.Size(value, value), new OpenCvSharp.Point(-1, -1), true, BorderTypes.Default);
             form.updateDst();
         }
 

@@ -76,11 +76,17 @@
     <Compile Include="BlurNSharpeningForm.Designer.cs">
       <DependentUpon>BlurNSharpeningForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Histogram.cs">
+    <Compile Include="ColorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Histogram.Designer.cs">
-      <DependentUpon>Histogram.cs</DependentUpon>
+    <Compile Include="ColorForm.Designer.cs">
+      <DependentUpon>ColorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistogramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistogramForm.Designer.cs">
+      <DependentUpon>HistogramForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PixelProcForm.cs">
       <SubType>Form</SubType>
@@ -90,14 +96,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ColorForm.resx">
+      <DependentUpon>ColorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BlurNSharpeningForm.resx">
       <DependentUpon>BlurNSharpeningForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Histogram.resx">
-      <DependentUpon>Histogram.cs</DependentUpon>
+    <EmbeddedResource Include="HistogramForm.resx">
+      <DependentUpon>HistogramForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PixelProcForm.resx">
       <DependentUpon>PixelProcForm.cs</DependentUpon>
