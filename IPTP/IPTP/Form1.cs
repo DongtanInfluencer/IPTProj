@@ -149,6 +149,7 @@ namespace IPTP
         {
             colorForm = BtnAction(colorForm, CForm);
         }
+
         private Form BtnAction(Form form, int formType)
         {
             if (src == null) return null;
@@ -168,6 +169,7 @@ namespace IPTP
                     case BNSForm:
                         form = new BlurNSharpeningForm(this);
                         break;
+
                     case CForm:
                         form = new ColorForm(this);
                         break;
@@ -187,7 +189,7 @@ namespace IPTP
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
-            if(history == null)
+            if (history == null)
             {
                 return;
             }
@@ -195,6 +197,5 @@ namespace IPTP
             src = history.Clone();
             updateSrc();
         }
-
     }
 }

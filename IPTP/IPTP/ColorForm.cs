@@ -1,12 +1,5 @@
 ﻿using OpenCvSharp;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IPTP
@@ -15,6 +8,7 @@ namespace IPTP
     {
         private Form1 form = null;
         private Mat history = null;
+
         public ColorForm(Form1 form)
         {
             InitializeComponent();
