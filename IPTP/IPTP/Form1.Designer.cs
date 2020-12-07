@@ -38,6 +38,10 @@
             this.btn_pixelProc = new System.Windows.Forms.Button();
             this.but_Histogram = new System.Windows.Forms.Button();
             this.btn_blurNsharpe = new System.Windows.Forms.Button();
+            this.btn_transform = new System.Windows.Forms.Button();
+            this.btn_color = new System.Windows.Forms.Button();
+            this.btn_Segmentation = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_src)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).BeginInit();
             this.SuspendLayout();
@@ -150,11 +154,56 @@
             this.btn_blurNsharpe.UseVisualStyleBackColor = true;
             this.btn_blurNsharpe.Click += new System.EventHandler(this.btn_blurNsharpe_Click);
             // 
+            // btn_transform
+            // 
+            this.btn_transform.Location = new System.Drawing.Point(650, 149);
+            this.btn_transform.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_transform.Name = "btn_transform";
+            this.btn_transform.Size = new System.Drawing.Size(130, 29);
+            this.btn_transform.TabIndex = 7;
+            this.btn_transform.Text = "기하학적 변환";
+            this.btn_transform.UseVisualStyleBackColor = true;
+            // 
+            // btn_color
+            // 
+            this.btn_color.Location = new System.Drawing.Point(650, 182);
+            this.btn_color.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_color.Name = "btn_color";
+            this.btn_color.Size = new System.Drawing.Size(130, 29);
+            this.btn_color.TabIndex = 8;
+            this.btn_color.Text = "컬러영상 처리";
+            this.btn_color.UseVisualStyleBackColor = true;
+            // 
+            // btn_Segmentation
+            // 
+            this.btn_Segmentation.Location = new System.Drawing.Point(650, 215);
+            this.btn_Segmentation.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Segmentation.Name = "btn_Segmentation";
+            this.btn_Segmentation.Size = new System.Drawing.Size(130, 29);
+            this.btn_Segmentation.TabIndex = 9;
+            this.btn_Segmentation.Text = "영상 분할";
+            this.btn_Segmentation.UseVisualStyleBackColor = true;
+            // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(650, 327);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(130, 29);
+            this.btn_reset.TabIndex = 10;
+            this.btn_reset.Text = "되돌리기";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 391);
+            this.Controls.Add(this.btn_reset);
+            this.Controls.Add(this.btn_Segmentation);
+            this.Controls.Add(this.btn_color);
+            this.Controls.Add(this.btn_transform);
             this.Controls.Add(this.btn_blurNsharpe);
             this.Controls.Add(this.but_Histogram);
             this.Controls.Add(this.btn_pixelProc);
@@ -187,6 +236,10 @@
         private System.Windows.Forms.Button btn_pixelProc;
         private System.Windows.Forms.Button but_Histogram;
         private System.Windows.Forms.Button btn_blurNsharpe;
+        private System.Windows.Forms.Button btn_transform;
+        private System.Windows.Forms.Button btn_color;
+        private System.Windows.Forms.Button btn_Segmentation;
+        private System.Windows.Forms.Button btn_reset;
     }
 }
 
