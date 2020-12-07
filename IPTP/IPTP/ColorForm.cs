@@ -24,13 +24,35 @@ namespace IPTP
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
-            Mat src = form.getSrc();
-            Mat hsvSrc = src.Clone();
-            Cv2.CvtColor(src, hsvSrc, ColorConversionCodes.BGR2HSV);
-            Mat[] rgb = Cv2.Split(src), hsv=Cv2.Split(hsvSrc);
+            history = form.getSrc().Clone();
 
-            Mat blankMat = new Mat(src.Size(), MatType.CV_8UC1);
-            
+            Mat src = form.getSrc();
+
+            updateImageView(src);
+        }
+
+        private void Btn_HistogramEqual_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Autumn);
+        }
+
+        private void applyColorMap(ColormapTypes colormapTypes)
+        {
+            Mat src = form.getSrc();
+            Mat dst = form.getDst();
+            Cv2.ApplyColorMap(src, dst, colormapTypes);
+            form.updateDst();
+            updateImageView(dst);
+        }
+
+        private void updateImageView(Mat mat)
+        {
+            Mat hsvMat = mat.Clone();
+            Cv2.CvtColor(mat, hsvMat, ColorConversionCodes.BGR2HSV);
+            Mat[] rgb = Cv2.Split(mat), hsv = Cv2.Split(hsvMat);
+
+            Mat blankMat = new Mat(mat.Size(), MatType.CV_8UC1);
+
             Mat[] red = new Mat[3];
             red[0] = red[1] = blankMat;
             red[2] = rgb[2];
@@ -52,20 +74,9 @@ namespace IPTP
             pb_image_Hue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[0]);
             pb_image_Sat.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[1]);
             pb_image_Value.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[2]);
-
         }
 
-        private void ColorForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

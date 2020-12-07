@@ -34,14 +34,25 @@
             this.pb_image_Hue = new System.Windows.Forms.PictureBox();
             this.pb_image_Sat = new System.Windows.Forms.PictureBox();
             this.pb_image_Value = new System.Windows.Forms.PictureBox();
-            this.Btn_HistogramEqual = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Autumn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Btn_Bone = new System.Windows.Forms.Button();
+            this.Btn_Hot = new System.Windows.Forms.Button();
+            this.Btn_Cool = new System.Windows.Forms.Button();
+            this.Btn_Jet = new System.Windows.Forms.Button();
+            this.Btn_Hsv = new System.Windows.Forms.Button();
+            this.Btn_Pink = new System.Windows.Forms.Button();
+            this.Btn_Ocean = new System.Windows.Forms.Button();
+            this.Btn_Spring = new System.Windows.Forms.Button();
+            this.Btn_Rainbow = new System.Windows.Forms.Button();
+            this.Btn_Winter = new System.Windows.Forms.Button();
+            this.Btn_Summer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Green)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Blue)).BeginInit();
@@ -110,23 +121,15 @@
             this.pb_image_Value.TabIndex = 7;
             this.pb_image_Value.TabStop = false;
             // 
-            // Btn_HistogramEqual
+            // Btn_Autumn
             // 
-            this.Btn_HistogramEqual.Location = new System.Drawing.Point(486, 12);
-            this.Btn_HistogramEqual.Name = "Btn_HistogramEqual";
-            this.Btn_HistogramEqual.Size = new System.Drawing.Size(150, 33);
-            this.Btn_HistogramEqual.TabIndex = 8;
-            this.Btn_HistogramEqual.Text = "히스토그램 평탄화";
-            this.Btn_HistogramEqual.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(486, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 33);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "히스토그램 평탄화";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_Autumn.Location = new System.Drawing.Point(480, 39);
+            this.Btn_Autumn.Name = "Btn_Autumn";
+            this.Btn_Autumn.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Autumn.TabIndex = 8;
+            this.Btn_Autumn.Text = "Autumn";
+            this.Btn_Autumn.UseVisualStyleBackColor = true;
+            this.Btn_Autumn.Click += new System.EventHandler(this.Btn_HistogramEqual_Click);
             // 
             // textBox1
             // 
@@ -139,7 +142,6 @@
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "Red";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -152,7 +154,6 @@
             this.textBox2.TabIndex = 11;
             this.textBox2.Text = "Green";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -202,19 +203,141 @@
             this.textBox6.Text = "Value";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox7.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox7.Location = new System.Drawing.Point(513, 12);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 21);
+            this.textBox7.TabIndex = 16;
+            this.textBox7.Text = "필터";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Btn_Bone
+            // 
+            this.Btn_Bone.Location = new System.Drawing.Point(565, 39);
+            this.Btn_Bone.Name = "Btn_Bone";
+            this.Btn_Bone.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Bone.TabIndex = 17;
+            this.Btn_Bone.Text = "Bone";
+            this.Btn_Bone.UseVisualStyleBackColor = true;
+            this.Btn_Bone.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_Hot
+            // 
+            this.Btn_Hot.Location = new System.Drawing.Point(565, 78);
+            this.Btn_Hot.Name = "Btn_Hot";
+            this.Btn_Hot.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Hot.TabIndex = 19;
+            this.Btn_Hot.Text = "Hot";
+            this.Btn_Hot.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Cool
+            // 
+            this.Btn_Cool.Location = new System.Drawing.Point(480, 78);
+            this.Btn_Cool.Name = "Btn_Cool";
+            this.Btn_Cool.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Cool.TabIndex = 18;
+            this.Btn_Cool.Text = "Cool";
+            this.Btn_Cool.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Jet
+            // 
+            this.Btn_Jet.Location = new System.Drawing.Point(565, 117);
+            this.Btn_Jet.Name = "Btn_Jet";
+            this.Btn_Jet.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Jet.TabIndex = 21;
+            this.Btn_Jet.Text = "Jet";
+            this.Btn_Jet.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Hsv
+            // 
+            this.Btn_Hsv.Location = new System.Drawing.Point(480, 117);
+            this.Btn_Hsv.Name = "Btn_Hsv";
+            this.Btn_Hsv.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Hsv.TabIndex = 20;
+            this.Btn_Hsv.Text = "Hsv";
+            this.Btn_Hsv.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Pink
+            // 
+            this.Btn_Pink.Location = new System.Drawing.Point(565, 156);
+            this.Btn_Pink.Name = "Btn_Pink";
+            this.Btn_Pink.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Pink.TabIndex = 23;
+            this.Btn_Pink.Text = "Pink";
+            this.Btn_Pink.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Ocean
+            // 
+            this.Btn_Ocean.Location = new System.Drawing.Point(480, 156);
+            this.Btn_Ocean.Name = "Btn_Ocean";
+            this.Btn_Ocean.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Ocean.TabIndex = 22;
+            this.Btn_Ocean.Text = "Ocean";
+            this.Btn_Ocean.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Spring
+            // 
+            this.Btn_Spring.Location = new System.Drawing.Point(565, 195);
+            this.Btn_Spring.Name = "Btn_Spring";
+            this.Btn_Spring.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Spring.TabIndex = 25;
+            this.Btn_Spring.Text = "Spring";
+            this.Btn_Spring.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Rainbow
+            // 
+            this.Btn_Rainbow.Location = new System.Drawing.Point(480, 195);
+            this.Btn_Rainbow.Name = "Btn_Rainbow";
+            this.Btn_Rainbow.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Rainbow.TabIndex = 24;
+            this.Btn_Rainbow.Text = "Rainbow";
+            this.Btn_Rainbow.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Winter
+            // 
+            this.Btn_Winter.Location = new System.Drawing.Point(565, 234);
+            this.Btn_Winter.Name = "Btn_Winter";
+            this.Btn_Winter.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Winter.TabIndex = 27;
+            this.Btn_Winter.Text = "Winter";
+            this.Btn_Winter.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Summer
+            // 
+            this.Btn_Summer.Location = new System.Drawing.Point(480, 234);
+            this.Btn_Summer.Name = "Btn_Summer";
+            this.Btn_Summer.Size = new System.Drawing.Size(79, 33);
+            this.Btn_Summer.TabIndex = 26;
+            this.Btn_Summer.Text = "Summer";
+            this.Btn_Summer.UseVisualStyleBackColor = true;
+            // 
             // ColorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 367);
+            this.ClientSize = new System.Drawing.Size(651, 367);
+            this.Controls.Add(this.Btn_Winter);
+            this.Controls.Add(this.Btn_Summer);
+            this.Controls.Add(this.Btn_Spring);
+            this.Controls.Add(this.Btn_Rainbow);
+            this.Controls.Add(this.Btn_Pink);
+            this.Controls.Add(this.Btn_Ocean);
+            this.Controls.Add(this.Btn_Jet);
+            this.Controls.Add(this.Btn_Hsv);
+            this.Controls.Add(this.Btn_Hot);
+            this.Controls.Add(this.Btn_Cool);
+            this.Controls.Add(this.Btn_Bone);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Btn_HistogramEqual);
+            this.Controls.Add(this.Btn_Autumn);
             this.Controls.Add(this.pb_image_Value);
             this.Controls.Add(this.pb_image_Sat);
             this.Controls.Add(this.pb_image_Hue);
@@ -223,7 +346,6 @@
             this.Controls.Add(this.pb_image_Red);
             this.Name = "ColorForm";
             this.Text = "ColorForm";
-            this.Load += new System.EventHandler(this.ColorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Red)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Green)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Blue)).EndInit();
@@ -243,13 +365,24 @@
         private System.Windows.Forms.PictureBox pb_image_Hue;
         private System.Windows.Forms.PictureBox pb_image_Sat;
         private System.Windows.Forms.PictureBox pb_image_Value;
-        private System.Windows.Forms.Button Btn_HistogramEqual;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_Autumn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button Btn_Bone;
+        private System.Windows.Forms.Button Btn_Hot;
+        private System.Windows.Forms.Button Btn_Cool;
+        private System.Windows.Forms.Button Btn_Jet;
+        private System.Windows.Forms.Button Btn_Hsv;
+        private System.Windows.Forms.Button Btn_Pink;
+        private System.Windows.Forms.Button Btn_Ocean;
+        private System.Windows.Forms.Button Btn_Spring;
+        private System.Windows.Forms.Button Btn_Rainbow;
+        private System.Windows.Forms.Button Btn_Winter;
+        private System.Windows.Forms.Button Btn_Summer;
     }
 }
