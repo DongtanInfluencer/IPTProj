@@ -173,5 +173,16 @@ namespace IPTP
             }
             return form;
         }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            if(src == null)
+            {
+                return;
+            }
+
+            dst = src.Clone();
+            updateDst();
+        }
     }
 }

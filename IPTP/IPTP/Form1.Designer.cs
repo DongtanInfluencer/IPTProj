@@ -193,6 +193,7 @@
             this.btn_reset.TabIndex = 10;
             this.btn_reset.Text = "되돌리기";
             this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // Form1
             // 
