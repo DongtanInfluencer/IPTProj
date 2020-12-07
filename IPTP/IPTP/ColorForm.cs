@@ -36,6 +36,66 @@ namespace IPTP
             applyColorMap(ColormapTypes.Autumn);
         }
 
+        private void Btn_Bone_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Bone);
+        }
+
+        private void Btn_Cool_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Cool);
+        }
+
+        private void Btn_Hot_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Hot);
+        }
+
+        private void Btn_Hsv_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Hsv);
+        }
+
+        private void Btn_Jet_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Jet);
+        }
+
+        private void Btn_Ocean_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Ocean);
+        }
+
+        private void Btn_Pink_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Pink);
+        }
+
+        private void Btn_Rainbow_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Rainbow);
+        }
+
+        private void Btn_Spring_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Spring);
+        }
+
+        private void Btn_Summer_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Summer);
+        }
+
+        private void Btn_Winter_Click(object sender, EventArgs e)
+        {
+            applyColorMap(ColormapTypes.Winter);
+        }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void applyColorMap(ColormapTypes colormapTypes)
         {
             Mat src = form.getSrc();
@@ -74,66 +134,6 @@ namespace IPTP
             pb_image_Hue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[0]);
             pb_image_Sat.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[1]);
             pb_image_Value.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[2]);
-        }
-
-        private void Btn_Bone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Cool_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Hot_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Hsv_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Jet_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Ocean_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Pink_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Rainbow_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Spring_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Summer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Winter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Reset_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
