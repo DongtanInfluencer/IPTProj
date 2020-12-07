@@ -130,7 +130,7 @@
             this.Btn_Autumn.TabIndex = 8;
             this.Btn_Autumn.Text = "Autumn";
             this.Btn_Autumn.UseVisualStyleBackColor = true;
-            this.Btn_Autumn.Click += new System.EventHandler(this.Btn_HistogramEqual_Click);
+            this.Btn_Autumn.Click += new System.EventHandler(this.Btn_Autumn_Click);
             // 
             // textBox1
             // 
@@ -223,7 +223,7 @@
             this.Btn_Bone.TabIndex = 17;
             this.Btn_Bone.Text = "Bone";
             this.Btn_Bone.UseVisualStyleBackColor = true;
-            this.Btn_Bone.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_Bone.Click += new System.EventHandler(this.Btn_Bone_Click);
             // 
             // Btn_Hot
             // 
@@ -233,6 +233,7 @@
             this.Btn_Hot.TabIndex = 19;
             this.Btn_Hot.Text = "Hot";
             this.Btn_Hot.UseVisualStyleBackColor = true;
+            this.Btn_Hot.Click += new System.EventHandler(this.Btn_Hot_Click);
             // 
             // Btn_Cool
             // 
@@ -242,6 +243,7 @@
             this.Btn_Cool.TabIndex = 18;
             this.Btn_Cool.Text = "Cool";
             this.Btn_Cool.UseVisualStyleBackColor = true;
+            this.Btn_Cool.Click += new System.EventHandler(this.Btn_Cool_Click);
             // 
             // Btn_Jet
             // 
@@ -251,6 +253,7 @@
             this.Btn_Jet.TabIndex = 21;
             this.Btn_Jet.Text = "Jet";
             this.Btn_Jet.UseVisualStyleBackColor = true;
+            this.Btn_Jet.Click += new System.EventHandler(this.Btn_Jet_Click);
             // 
             // Btn_Hsv
             // 
@@ -260,6 +263,7 @@
             this.Btn_Hsv.TabIndex = 20;
             this.Btn_Hsv.Text = "Hsv";
             this.Btn_Hsv.UseVisualStyleBackColor = true;
+            this.Btn_Hsv.Click += new System.EventHandler(this.Btn_Hsv_Click);
             // 
             // Btn_Pink
             // 
@@ -269,6 +273,7 @@
             this.Btn_Pink.TabIndex = 23;
             this.Btn_Pink.Text = "Pink";
             this.Btn_Pink.UseVisualStyleBackColor = true;
+            this.Btn_Pink.Click += new System.EventHandler(this.Btn_Pink_Click);
             // 
             // Btn_Ocean
             // 
@@ -278,6 +283,7 @@
             this.Btn_Ocean.TabIndex = 22;
             this.Btn_Ocean.Text = "Ocean";
             this.Btn_Ocean.UseVisualStyleBackColor = true;
+            this.Btn_Ocean.Click += new System.EventHandler(this.Btn_Ocean_Click);
             // 
             // Btn_Spring
             // 
@@ -287,6 +293,7 @@
             this.Btn_Spring.TabIndex = 25;
             this.Btn_Spring.Text = "Spring";
             this.Btn_Spring.UseVisualStyleBackColor = true;
+            this.Btn_Spring.Click += new System.EventHandler(this.Btn_Spring_Click);
             // 
             // Btn_Rainbow
             // 
@@ -296,6 +303,7 @@
             this.Btn_Rainbow.TabIndex = 24;
             this.Btn_Rainbow.Text = "Rainbow";
             this.Btn_Rainbow.UseVisualStyleBackColor = true;
+            this.Btn_Rainbow.Click += new System.EventHandler(this.Btn_Rainbow_Click);
             // 
             // Btn_Winter
             // 
@@ -305,6 +313,7 @@
             this.Btn_Winter.TabIndex = 27;
             this.Btn_Winter.Text = "Winter";
             this.Btn_Winter.UseVisualStyleBackColor = true;
+            this.Btn_Winter.Click += new System.EventHandler(this.Btn_Winter_Click);
             // 
             // Btn_Summer
             // 
@@ -314,6 +323,7 @@
             this.Btn_Summer.TabIndex = 26;
             this.Btn_Summer.Text = "Summer";
             this.Btn_Summer.UseVisualStyleBackColor = true;
+            this.Btn_Summer.Click += new System.EventHandler(this.Btn_Summer_Click);
             // 
             // btn_Reset
             // 
@@ -323,6 +333,7 @@
             this.btn_Reset.TabIndex = 28;
             this.btn_Reset.Text = "되돌리기";
             this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
             // ColorForm
             // 
