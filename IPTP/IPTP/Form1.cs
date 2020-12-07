@@ -9,6 +9,7 @@ namespace IPTP
     {
         private Mat src = null;
         private Mat dst = null;
+        private Mat history = null;
 
         private Form pixelProcForm = null;
         private Form histogramForm = null;
@@ -71,6 +72,7 @@ namespace IPTP
                 updateSrc();
                 dst = src.Clone();
                 updateDst();
+                history = src.Clone();
             }
         }
 
@@ -185,13 +187,13 @@ namespace IPTP
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
-            if(src == null)
+            if(history == null)
             {
                 return;
             }
 
-            dst = src.Clone();
-            updateDst();
+            src = history.Clone();
+            updateSrc();
         }
 
     }
