@@ -13,10 +13,12 @@ namespace IPTP
         private Form pixelProcForm = null;
         private Form histogramForm = null;
         private Form blurNSharpeningForm = null;
+        private Form colorForm = null;
 
         private const int PPForm = 0;
         private const int HForm = 1;
         private const int BNSForm = 2;
+        private const int CForm = 3;
 
         public Form1()
         {
@@ -141,6 +143,10 @@ namespace IPTP
             blurNSharpeningForm = BtnAction(blurNSharpeningForm, BNSForm);
         }
 
+        private void btn_color_Click(object sender, EventArgs e)
+        {
+            colorForm = BtnAction(colorForm, CForm);
+        }
         private Form BtnAction(Form form, int formType)
         {
             if (src == null) return null;
@@ -159,6 +165,9 @@ namespace IPTP
 
                     case BNSForm:
                         form = new BlurNSharpeningForm(this);
+                        break;
+                    case CForm:
+                        form = new ColorForm(this);
                         break;
 
                     default:
@@ -184,5 +193,6 @@ namespace IPTP
             dst = src.Clone();
             updateDst();
         }
+
     }
 }
