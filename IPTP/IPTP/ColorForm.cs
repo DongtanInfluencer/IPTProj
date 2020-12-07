@@ -93,7 +93,11 @@ namespace IPTP
 
         private void btn_Reset_Click(object sender, EventArgs e)
         {
+            if (history == null) return;
 
+            form.setDst(history.Clone());
+            form.updateDst();
+            updateImageView(history);
         }
 
         private void applyColorMap(ColormapTypes colormapTypes)
