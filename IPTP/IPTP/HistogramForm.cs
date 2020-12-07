@@ -19,16 +19,17 @@ namespace IPTP
         {
             //폼이 켜질때 자동으로 히스토그램 표출 , 켜질때의 Dst를 history로 표시
             base.OnActivated(e);
-            Mat dst = form.getDst();
-            updateHistogram(dst);
+            Mat src = form.getSrc();
+            updateHistogram(src);
         }
 
         private void Btn_HistogramEqual_Click(object sender, System.EventArgs e)
         {
+            Mat src = form.getSrc();
             Mat dst = form.getDst();
-            if (history == null && history != dst) history = dst.Clone(); // 히스토리 만들기
+            if (history == null && history != dst) history = src.Clone(); // 히스토리 만들기
 
-            Mat[] rgb = Cv2.Split(dst);
+            Mat[] rgb = Cv2.Split(src);
             //채널별 평탄화
             Cv2.EqualizeHist(rgb[0], rgb[0]);
             Cv2.EqualizeHist(rgb[1], rgb[1]);
@@ -43,10 +44,11 @@ namespace IPTP
 
         private void btn_HistogramBinary_Click(object sender, EventArgs e)
         {
+            Mat src = form.getSrc();
             Mat dst = form.getDst();
-            if (history == null && history != dst) history = dst.Clone(); // 히스토리 만들기
+            if (history == null && history != dst) history = src.Clone(); // 히스토리 만들기
 
-            Mat[] rgb = Cv2.Split(dst);
+            Mat[] rgb = Cv2.Split(src);
             //채널별 이진화
             Cv2.Threshold(rgb[0], rgb[0], 0, 255, ThresholdTypes.Otsu);
             Cv2.Threshold(rgb[1], rgb[1], 0, 255, ThresholdTypes.Otsu);
