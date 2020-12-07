@@ -53,6 +53,7 @@
             this.Btn_Rainbow = new System.Windows.Forms.Button();
             this.Btn_Winter = new System.Windows.Forms.Button();
             this.Btn_Summer = new System.Windows.Forms.Button();
+            this.btn_Reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Green)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image_Blue)).BeginInit();
@@ -314,11 +315,21 @@
             this.Btn_Summer.Text = "Summer";
             this.Btn_Summer.UseVisualStyleBackColor = true;
             // 
+            // btn_Reset
+            // 
+            this.btn_Reset.Location = new System.Drawing.Point(489, 327);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(150, 33);
+            this.btn_Reset.TabIndex = 28;
+            this.btn_Reset.Text = "되돌리기";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            // 
             // ColorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 367);
+            this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.Btn_Winter);
             this.Controls.Add(this.Btn_Summer);
             this.Controls.Add(this.Btn_Spring);
@@ -384,5 +395,6 @@
         private System.Windows.Forms.Button Btn_Rainbow;
         private System.Windows.Forms.Button Btn_Winter;
         private System.Windows.Forms.Button Btn_Summer;
+        private System.Windows.Forms.Button btn_Reset;
     }
 }
