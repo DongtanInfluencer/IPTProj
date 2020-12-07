@@ -41,6 +41,7 @@
             this.btn_transform = new System.Windows.Forms.Button();
             this.btn_color = new System.Windows.Forms.Button();
             this.btn_Segmentation = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_src)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dst)).BeginInit();
             this.SuspendLayout();
@@ -183,11 +184,22 @@
             this.btn_Segmentation.Text = "영상 분할";
             this.btn_Segmentation.UseVisualStyleBackColor = true;
             // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(650, 327);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(130, 29);
+            this.btn_reset.TabIndex = 10;
+            this.btn_reset.Text = "되돌리기";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 391);
+            this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_Segmentation);
             this.Controls.Add(this.btn_color);
             this.Controls.Add(this.btn_transform);
@@ -226,6 +238,7 @@
         private System.Windows.Forms.Button btn_transform;
         private System.Windows.Forms.Button btn_color;
         private System.Windows.Forms.Button btn_Segmentation;
+        private System.Windows.Forms.Button btn_reset;
     }
 }
 
