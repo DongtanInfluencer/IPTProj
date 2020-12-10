@@ -8,6 +8,8 @@ namespace IPTP
     {
         private Form1 form = null;
 
+        
+
         public ColorForm(Form1 form)
         {
             InitializeComponent();
@@ -15,14 +17,15 @@ namespace IPTP
             this.MinimizeBox = false;
             this.MaximizeBox = false;
 
-            Mat src = form.getSrc();
-
-            updateImageView(src);
+            form.onSrcUpdate += new SrcDelegate(updateImageView);
         }
 
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
+
+            Mat src = form.getSrc();
+            updateImageView(src);
         }
 
         private void Btn_Autumn_Click(object sender, EventArgs e)
@@ -101,6 +104,10 @@ namespace IPTP
             updateImageView(dst);
         }
 
+        private void updateImageView()
+        {
+            updateImageView(form.getSrc());
+        }
         private void updateImageView(Mat mat)
         {
 
