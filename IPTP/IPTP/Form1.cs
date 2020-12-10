@@ -10,7 +10,7 @@ namespace IPTP
     {
         private Mat src = null;
         private Mat dst = null;
-        private Stack<Mat> history = new Stack<Mat>();
+        private readonly Stack<Mat> history = new Stack<Mat>();
 
         private Form pixelProcForm = null;
         private Form histogramForm = null;
@@ -61,6 +61,10 @@ namespace IPTP
         {
             Bitmap bitmap = new Bitmap(path);
             Mat mat = OpenCvSharp.Extensions.BitmapConverter.ToMat(bitmap);
+            if(mat.Type() != MatType.CV_8UC3)
+            {
+                Cv2.CvtColor(mat, mat, ColorConversionCodes.GRAY2RGB);
+            }
             return mat;
         }
 
@@ -152,7 +156,7 @@ namespace IPTP
             colorForm = BtnAction(colorForm, CForm);
         }
 
-        private Form BtnAction(Form form, int formType)
+        private Form BtnAction(Form form,int formType)
         {
             if (src == null) return null;
 
