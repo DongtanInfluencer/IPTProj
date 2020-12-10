@@ -38,7 +38,6 @@
             this.btn_pixelProc = new System.Windows.Forms.Button();
             this.but_Histogram = new System.Windows.Forms.Button();
             this.btn_blurNsharpe = new System.Windows.Forms.Button();
-            this.btn_transform = new System.Windows.Forms.Button();
             this.btn_color = new System.Windows.Forms.Button();
             this.btn_Segmentation = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
@@ -53,7 +52,7 @@
             this.pb_src.Location = new System.Drawing.Point(71, 100);
             this.pb_src.Margin = new System.Windows.Forms.Padding(4);
             this.pb_src.Name = "pb_src";
-            this.pb_src.Size = new System.Drawing.Size(513, 512);
+            this.pb_src.Size = new System.Drawing.Size(512, 512);
             this.pb_src.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_src.TabIndex = 0;
             this.pb_src.TabStop = false;
@@ -63,7 +62,7 @@
             this.btn_open.Location = new System.Drawing.Point(71, 634);
             this.btn_open.Margin = new System.Windows.Forms.Padding(4);
             this.btn_open.Name = "btn_open";
-            this.btn_open.Size = new System.Drawing.Size(513, 78);
+            this.btn_open.Size = new System.Drawing.Size(512, 78);
             this.btn_open.TabIndex = 1;
             this.btn_open.Text = "불러오기";
             this.btn_open.UseVisualStyleBackColor = true;
@@ -75,7 +74,7 @@
             this.pb_dst.Location = new System.Drawing.Point(670, 100);
             this.pb_dst.Margin = new System.Windows.Forms.Padding(4);
             this.pb_dst.Name = "pb_dst";
-            this.pb_dst.Size = new System.Drawing.Size(513, 512);
+            this.pb_dst.Size = new System.Drawing.Size(512, 512);
             this.pb_dst.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_dst.TabIndex = 0;
             this.pb_dst.TabStop = false;
@@ -85,7 +84,7 @@
             this.btn_save.Location = new System.Drawing.Point(670, 634);
             this.btn_save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(513, 78);
+            this.btn_save.Size = new System.Drawing.Size(512, 78);
             this.btn_save.TabIndex = 1;
             this.btn_save.Text = "저장하기";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -155,16 +154,6 @@
             this.btn_blurNsharpe.UseVisualStyleBackColor = true;
             this.btn_blurNsharpe.Click += new System.EventHandler(this.btn_blurNsharpe_Click);
             // 
-            // btn_transform
-            // 
-            this.btn_transform.Location = new System.Drawing.Point(1207, 298);
-            this.btn_transform.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_transform.Name = "btn_transform";
-            this.btn_transform.Size = new System.Drawing.Size(241, 58);
-            this.btn_transform.TabIndex = 7;
-            this.btn_transform.Text = "기하학적 변환";
-            this.btn_transform.UseVisualStyleBackColor = true;
-            // 
             // btn_color
             // 
             this.btn_color.Location = new System.Drawing.Point(1207, 364);
@@ -220,7 +209,6 @@
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_Segmentation);
             this.Controls.Add(this.btn_color);
-            this.Controls.Add(this.btn_transform);
             this.Controls.Add(this.btn_blurNsharpe);
             this.Controls.Add(this.but_Histogram);
             this.Controls.Add(this.btn_pixelProc);
@@ -257,7 +245,6 @@
         private System.Windows.Forms.Button btn_pixelProc;
         private System.Windows.Forms.Button but_Histogram;
         private System.Windows.Forms.Button btn_blurNsharpe;
-        private System.Windows.Forms.Button btn_transform;
         private System.Windows.Forms.Button btn_color;
         private System.Windows.Forms.Button btn_Segmentation;
         private System.Windows.Forms.Button btn_reset;
