@@ -73,6 +73,10 @@ namespace IPTP
 
         private void updateHistogram(Mat dst)
         {
+            if (dst.Type() != MatType.CV_8UC3)
+            {
+                Cv2.CvtColor(dst, dst, ColorConversionCodes.GRAY2RGB);
+            }
             Mat[] rgb = Cv2.Split(dst);
 
             pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[0], 0));

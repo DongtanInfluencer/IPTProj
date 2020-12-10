@@ -19,8 +19,8 @@ namespace IPTP
             history = form.getSrc().Clone();
 
             Mat src = form.getSrc();
+
             updateImageView(src);
-        }
 
         protected override void OnActivated(EventArgs e)
         {
@@ -107,6 +107,12 @@ namespace IPTP
 
         private void updateImageView(Mat mat)
         {
+
+            if (mat.Type() != MatType.CV_8UC3)
+            {
+                Cv2.CvtColor(mat, mat, ColorConversionCodes.GRAY2RGB);
+            }
+
             Mat hsvMat = mat.Clone();
             Cv2.CvtColor(mat, hsvMat, ColorConversionCodes.BGR2HSV);
             Mat[] rgb = Cv2.Split(mat), hsv = Cv2.Split(hsvMat);

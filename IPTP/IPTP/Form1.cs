@@ -10,7 +10,7 @@ namespace IPTP
     {
         private Mat src = null;
         private Mat dst = null;
-        private Stack<Mat> history = new Stack<Mat>();
+        private readonly Stack<Mat> history = new Stack<Mat>();
 
         private Form pixelProcForm = null;
         private Form histogramForm = null;
@@ -163,7 +163,7 @@ namespace IPTP
             colorForm = BtnAction(colorForm, CForm);
         }
 
-        private Form BtnAction(Form form, int formType)
+        private Form BtnAction(Form form,int formType)
         {
             if (src == null) return null;
             if (form == null || form.IsDisposed)
