@@ -26,7 +26,7 @@ namespace IPTP
             tb_value.Text = (TrB_value.Value * 2 + 1).ToString();
             mode = AdaptiveThresholdTypes.MeanC;
             thMode = ThresholdTypes.Binary;
-        }
+        } // 
 
         private void SegmentationForm_Load(object sender, EventArgs e)
         {

@@ -92,6 +92,6 @@ namespace IPTP
             double gamma = (double)tr_gamma.Value / 100;
             tb_gamma.Text = gamma.ToString();
             update();
-        }
+        } //
     }
 }

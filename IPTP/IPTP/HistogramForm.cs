@@ -154,6 +154,6 @@ namespace IPTP
 
         private void Histogram_Load(object sender, EventArgs e)
         {
-        }
+        } // 
     }
 }
