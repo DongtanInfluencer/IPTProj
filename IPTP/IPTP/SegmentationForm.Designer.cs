@@ -42,7 +42,7 @@
             // 
             // btn_Reset
             // 
-            this.btn_Reset.Location = new System.Drawing.Point(22, 421);
+            this.btn_Reset.Location = new System.Drawing.Point(22, 257);
             this.btn_Reset.Name = "btn_Reset";
             this.btn_Reset.Size = new System.Drawing.Size(150, 33);
             this.btn_Reset.TabIndex = 42;
@@ -52,7 +52,7 @@
             // 
             // Btn_BiInv
             // 
-            this.Btn_BiInv.Location = new System.Drawing.Point(22, 218);
+            this.Btn_BiInv.Location = new System.Drawing.Point(22, 199);
             this.Btn_BiInv.Name = "Btn_BiInv";
             this.Btn_BiInv.Size = new System.Drawing.Size(79, 33);
             this.Btn_BiInv.TabIndex = 36;
@@ -62,7 +62,7 @@
             // 
             // Btn_Binary
             // 
-            this.Btn_Binary.Location = new System.Drawing.Point(22, 179);
+            this.Btn_Binary.Location = new System.Drawing.Point(22, 160);
             this.Btn_Binary.Name = "Btn_Binary";
             this.Btn_Binary.Size = new System.Drawing.Size(79, 33);
             this.Btn_Binary.TabIndex = 34;
@@ -103,8 +103,9 @@
             // 
             // tb_value
             // 
-            this.tb_value.Location = new System.Drawing.Point(130, 378);
+            this.tb_value.Location = new System.Drawing.Point(130, 230);
             this.tb_value.Name = "tb_value";
+            this.tb_value.ReadOnly = true;
             this.tb_value.Size = new System.Drawing.Size(45, 21);
             this.tb_value.TabIndex = 43;
             this.tb_value.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -116,7 +117,7 @@
             this.TrB_value.Minimum = 1;
             this.TrB_value.Name = "TrB_value";
             this.TrB_value.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TrB_value.Size = new System.Drawing.Size(45, 360);
+            this.TrB_value.Size = new System.Drawing.Size(45, 212);
             this.TrB_value.SmallChange = 2;
             this.TrB_value.TabIndex = 44;
             this.TrB_value.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
@@ -127,7 +128,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.No;
-            this.textBox1.Location = new System.Drawing.Point(12, 152);
+            this.textBox1.Location = new System.Drawing.Point(12, 133);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 45;
@@ -139,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(184, 466);
+            this.ClientSize = new System.Drawing.Size(184, 300);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tb_value);
             this.Controls.Add(this.TrB_value);
