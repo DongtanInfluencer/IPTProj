@@ -21,6 +21,7 @@ namespace IPTP
             Mat src = form.getSrc();
 
             updateImageView(src);
+        }
 
         protected override void OnActivated(EventArgs e)
         {
