@@ -13,6 +13,8 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
 
             Mat src = form.getSrc();
             updateHistogram(src);

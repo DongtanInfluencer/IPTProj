@@ -42,9 +42,10 @@
             // 
             // btn_averageBlur
             // 
-            this.btn_averageBlur.Location = new System.Drawing.Point(12, 12);
+            this.btn_averageBlur.Location = new System.Drawing.Point(22, 24);
+            this.btn_averageBlur.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_averageBlur.Name = "btn_averageBlur";
-            this.btn_averageBlur.Size = new System.Drawing.Size(135, 44);
+            this.btn_averageBlur.Size = new System.Drawing.Size(251, 88);
             this.btn_averageBlur.TabIndex = 0;
             this.btn_averageBlur.Text = "평균값 필터링";
             this.btn_averageBlur.UseVisualStyleBackColor = true;
@@ -52,12 +53,13 @@
             // 
             // TrB_value
             // 
-            this.TrB_value.Location = new System.Drawing.Point(153, 12);
+            this.TrB_value.Location = new System.Drawing.Point(284, 24);
+            this.TrB_value.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TrB_value.Maximum = 25;
             this.TrB_value.Minimum = 1;
             this.TrB_value.Name = "TrB_value";
             this.TrB_value.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TrB_value.Size = new System.Drawing.Size(45, 360);
+            this.TrB_value.Size = new System.Drawing.Size(90, 720);
             this.TrB_value.SmallChange = 2;
             this.TrB_value.TabIndex = 2;
             this.TrB_value.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
@@ -66,17 +68,19 @@
             // 
             // tb_value
             // 
-            this.tb_value.Location = new System.Drawing.Point(153, 378);
+            this.tb_value.Location = new System.Drawing.Point(284, 756);
+            this.tb_value.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tb_value.Name = "tb_value";
-            this.tb_value.Size = new System.Drawing.Size(45, 21);
+            this.tb_value.Size = new System.Drawing.Size(80, 35);
             this.tb_value.TabIndex = 1;
             this.tb_value.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_GaussianBlur
             // 
-            this.btn_GaussianBlur.Location = new System.Drawing.Point(12, 62);
+            this.btn_GaussianBlur.Location = new System.Drawing.Point(22, 124);
+            this.btn_GaussianBlur.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_GaussianBlur.Name = "btn_GaussianBlur";
-            this.btn_GaussianBlur.Size = new System.Drawing.Size(135, 44);
+            this.btn_GaussianBlur.Size = new System.Drawing.Size(251, 88);
             this.btn_GaussianBlur.TabIndex = 4;
             this.btn_GaussianBlur.Text = "가우시안 필터링";
             this.btn_GaussianBlur.UseVisualStyleBackColor = true;
@@ -84,9 +88,10 @@
             // 
             // btn_medianBlur
             // 
-            this.btn_medianBlur.Location = new System.Drawing.Point(12, 112);
+            this.btn_medianBlur.Location = new System.Drawing.Point(22, 224);
+            this.btn_medianBlur.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_medianBlur.Name = "btn_medianBlur";
-            this.btn_medianBlur.Size = new System.Drawing.Size(135, 44);
+            this.btn_medianBlur.Size = new System.Drawing.Size(251, 88);
             this.btn_medianBlur.TabIndex = 5;
             this.btn_medianBlur.Text = "중간값 필터링";
             this.btn_medianBlur.UseVisualStyleBackColor = true;
@@ -94,9 +99,10 @@
             // 
             // btn_Sharpening
             // 
-            this.btn_Sharpening.Location = new System.Drawing.Point(12, 262);
+            this.btn_Sharpening.Location = new System.Drawing.Point(22, 524);
+            this.btn_Sharpening.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_Sharpening.Name = "btn_Sharpening";
-            this.btn_Sharpening.Size = new System.Drawing.Size(135, 44);
+            this.btn_Sharpening.Size = new System.Drawing.Size(251, 88);
             this.btn_Sharpening.TabIndex = 6;
             this.btn_Sharpening.Text = "샤프닝";
             this.btn_Sharpening.UseVisualStyleBackColor = true;
@@ -104,9 +110,10 @@
             // 
             // btn_BoxBlur
             // 
-            this.btn_BoxBlur.Location = new System.Drawing.Point(12, 162);
+            this.btn_BoxBlur.Location = new System.Drawing.Point(22, 324);
+            this.btn_BoxBlur.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_BoxBlur.Name = "btn_BoxBlur";
-            this.btn_BoxBlur.Size = new System.Drawing.Size(135, 44);
+            this.btn_BoxBlur.Size = new System.Drawing.Size(251, 88);
             this.btn_BoxBlur.TabIndex = 7;
             this.btn_BoxBlur.Text = "박스효과 필터링";
             this.btn_BoxBlur.UseVisualStyleBackColor = true;
@@ -114,9 +121,10 @@
             // 
             // btn_BilateralBlur
             // 
-            this.btn_BilateralBlur.Location = new System.Drawing.Point(12, 212);
+            this.btn_BilateralBlur.Location = new System.Drawing.Point(22, 424);
+            this.btn_BilateralBlur.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_BilateralBlur.Name = "btn_BilateralBlur";
-            this.btn_BilateralBlur.Size = new System.Drawing.Size(135, 44);
+            this.btn_BilateralBlur.Size = new System.Drawing.Size(251, 88);
             this.btn_BilateralBlur.TabIndex = 8;
             this.btn_BilateralBlur.Text = "양방향 필터링";
             this.btn_BilateralBlur.UseVisualStyleBackColor = true;
@@ -124,9 +132,10 @@
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(12, 355);
+            this.btn_reset.Location = new System.Drawing.Point(22, 710);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(135, 44);
+            this.btn_reset.Size = new System.Drawing.Size(251, 88);
             this.btn_reset.TabIndex = 9;
             this.btn_reset.Text = "되돌리기";
             this.btn_reset.UseVisualStyleBackColor = true;
@@ -134,9 +143,9 @@
             // 
             // BlurNSharpeningForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(216, 411);
+            this.ClientSize = new System.Drawing.Size(438, 822);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_BilateralBlur);
             this.Controls.Add(this.btn_BoxBlur);
@@ -146,7 +155,12 @@
             this.Controls.Add(this.tb_value);
             this.Controls.Add(this.TrB_value);
             this.Controls.Add(this.btn_averageBlur);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BlurNSharpeningForm";
+            this.ShowIcon = false;
             this.Text = "BNS";
             ((System.ComponentModel.ISupportInitialize)(this.TrB_value)).EndInit();
             this.ResumeLayout(false);

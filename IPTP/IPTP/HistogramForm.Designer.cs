@@ -42,9 +42,10 @@
             // pb_Histogram_Red
             // 
             this.pb_Histogram_Red.BackColor = System.Drawing.Color.White;
-            this.pb_Histogram_Red.Location = new System.Drawing.Point(21, 29);
+            this.pb_Histogram_Red.Location = new System.Drawing.Point(39, 58);
+            this.pb_Histogram_Red.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pb_Histogram_Red.Name = "pb_Histogram_Red";
-            this.pb_Histogram_Red.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Red.Size = new System.Drawing.Size(279, 300);
             this.pb_Histogram_Red.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_Red.TabIndex = 1;
             this.pb_Histogram_Red.TabStop = false;
@@ -52,9 +53,10 @@
             // pb_Histogram_Green
             // 
             this.pb_Histogram_Green.BackColor = System.Drawing.Color.White;
-            this.pb_Histogram_Green.Location = new System.Drawing.Point(221, 29);
+            this.pb_Histogram_Green.Location = new System.Drawing.Point(410, 58);
+            this.pb_Histogram_Green.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pb_Histogram_Green.Name = "pb_Histogram_Green";
-            this.pb_Histogram_Green.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Green.Size = new System.Drawing.Size(279, 300);
             this.pb_Histogram_Green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_Green.TabIndex = 2;
             this.pb_Histogram_Green.TabStop = false;
@@ -62,18 +64,20 @@
             // pb_Histogram_Blue
             // 
             this.pb_Histogram_Blue.BackColor = System.Drawing.Color.White;
-            this.pb_Histogram_Blue.Location = new System.Drawing.Point(416, 29);
+            this.pb_Histogram_Blue.Location = new System.Drawing.Point(773, 58);
+            this.pb_Histogram_Blue.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pb_Histogram_Blue.Name = "pb_Histogram_Blue";
-            this.pb_Histogram_Blue.Size = new System.Drawing.Size(150, 150);
+            this.pb_Histogram_Blue.Size = new System.Drawing.Size(279, 300);
             this.pb_Histogram_Blue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Histogram_Blue.TabIndex = 3;
             this.pb_Histogram_Blue.TabStop = false;
             // 
             // Btn_HistogramEqual
             // 
-            this.Btn_HistogramEqual.Location = new System.Drawing.Point(21, 205);
+            this.Btn_HistogramEqual.Location = new System.Drawing.Point(39, 410);
+            this.Btn_HistogramEqual.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Btn_HistogramEqual.Name = "Btn_HistogramEqual";
-            this.Btn_HistogramEqual.Size = new System.Drawing.Size(150, 33);
+            this.Btn_HistogramEqual.Size = new System.Drawing.Size(279, 66);
             this.Btn_HistogramEqual.TabIndex = 5;
             this.Btn_HistogramEqual.Text = "히스토그램 평탄화";
             this.Btn_HistogramEqual.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@
             // 
             // btn_Reset
             // 
-            this.btn_Reset.Location = new System.Drawing.Point(416, 205);
+            this.btn_Reset.Location = new System.Drawing.Point(773, 410);
+            this.btn_Reset.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_Reset.Name = "btn_Reset";
-            this.btn_Reset.Size = new System.Drawing.Size(150, 33);
+            this.btn_Reset.Size = new System.Drawing.Size(279, 66);
             this.btn_Reset.TabIndex = 6;
             this.btn_Reset.Text = "되돌리기";
             this.btn_Reset.UseVisualStyleBackColor = true;
@@ -91,9 +96,10 @@
             // 
             // btn_HistogramBinary
             // 
-            this.btn_HistogramBinary.Location = new System.Drawing.Point(221, 205);
+            this.btn_HistogramBinary.Location = new System.Drawing.Point(410, 410);
+            this.btn_HistogramBinary.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_HistogramBinary.Name = "btn_HistogramBinary";
-            this.btn_HistogramBinary.Size = new System.Drawing.Size(150, 33);
+            this.btn_HistogramBinary.Size = new System.Drawing.Size(279, 66);
             this.btn_HistogramBinary.TabIndex = 7;
             this.btn_HistogramBinary.Text = "히스토그램 이진화";
             this.btn_HistogramBinary.UseVisualStyleBackColor = true;
@@ -101,16 +107,21 @@
             // 
             // HistogramForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 249);
+            this.ClientSize = new System.Drawing.Size(1092, 498);
             this.Controls.Add(this.btn_HistogramBinary);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.Btn_HistogramEqual);
             this.Controls.Add(this.pb_Histogram_Blue);
             this.Controls.Add(this.pb_Histogram_Green);
             this.Controls.Add(this.pb_Histogram_Red);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "HistogramForm";
+            this.ShowIcon = false;
             this.Text = "Histogram";
             this.Load += new System.EventHandler(this.Histogram_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Histogram_Red)).EndInit();

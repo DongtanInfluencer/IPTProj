@@ -16,15 +16,26 @@ namespace IPTP
         private Form histogramForm = null;
         private Form blurNSharpeningForm = null;
         private Form colorForm = null;
+        private Form segmentationForm = null;
+
+        private List<Form> openForms = new List<Form>();
 
         private const int PPForm = 0;
         private const int HForm = 1;
         private const int BNSForm = 2;
         private const int CForm = 3;
+        private const int SForm = 4;
+
+        private int pX = 0;
+        private int pY = 0;
 
         public Form1()
         {
             InitializeComponent();
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
+            pX = this.Location.X;
+            pY = this.Location.Y;
         }
 
         public void updateSrc()
@@ -155,7 +166,6 @@ namespace IPTP
         private Form BtnAction(Form form, int formType)
         {
             if (src == null) return null;
-
             if (form == null || form.IsDisposed)
             {
                 switch (formType)
@@ -176,17 +186,26 @@ namespace IPTP
                         form = new ColorForm(this);
                         break;
 
+                    case SForm:
+                        form = new SegmentationForm(this);
+                        break;
+
                     default:
                         return null;
                 }
                 form.Show();
+                openForms.Add(form);
+                form.SetDesktopLocation(this.Location.X + this.Width, this.Location.Y);
             }
             else if (!form.Visible)
             {
                 form.Show();
+                openForms.Add(form);
+                form.SetDesktopLocation(this.Location.X + this.Width, this.Location.Y);
             }
             else
             {
+                openForms.Remove(form);
                 form.Hide();
             }
             return form;
@@ -205,6 +224,26 @@ namespace IPTP
             updateSrc();
             updateDst();
             if (history.Count == 0) btn_reset.Enabled = false;
+        }
+
+        private void btn_Segmentation_Click(object sender, EventArgs e)
+        {
+            segmentationForm = BtnAction(segmentationForm, SForm);
+        }
+
+        private void Form1_Move(object sender, EventArgs e)
+        {
+            foreach (Form form in this.openForms)
+            {
+                if (form.Visible)
+                {
+                    int dx = pX - this.Location.X;
+                    int dy = pY - this.Location.Y;
+                    form.SetDesktopLocation(form.Location.X - dx, form.Location.Y - dy);
+                }
+            }
+            pX = this.Location.X;
+            pY = this.Location.Y;
         }
     }
 }

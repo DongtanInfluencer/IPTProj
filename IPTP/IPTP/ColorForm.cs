@@ -13,6 +13,8 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
 
             history = form.getSrc().Clone();
 

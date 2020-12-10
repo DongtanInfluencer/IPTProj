@@ -16,6 +16,8 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
         }
 
         protected override void OnActivated(EventArgs e)

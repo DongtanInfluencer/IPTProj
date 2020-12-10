@@ -12,6 +12,8 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
         }
 
         private void onlyDigit(object sender, KeyPressEventArgs e)
