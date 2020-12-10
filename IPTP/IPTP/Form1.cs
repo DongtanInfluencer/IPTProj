@@ -6,8 +6,10 @@ using System.Collections.Generic;
 
 namespace IPTP
 {
+    public delegate void SrcDelegate();
     public partial class Form1 : Form
     {
+        public event SrcDelegate onSrcUpdate;
         private Mat src = null;
         private Mat dst = null;
         private readonly Stack<Mat> history = new Stack<Mat>();
@@ -66,6 +68,7 @@ namespace IPTP
         {
             if (pb_src.Image != null) pb_src.Image.Dispose();
             pb_src.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(src);
+            if (onSrcUpdate != null) onSrcUpdate();
         }
 
         public void updateDst()

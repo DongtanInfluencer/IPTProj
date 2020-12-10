@@ -16,13 +16,14 @@ namespace IPTP
             this.MinimizeBox = false;
             this.MaximizeBox = false;
 
-            Mat src = form.getSrc();
-            updateHistogram(src);
+            form.onSrcUpdate += new SrcDelegate(updateHistogram);
         }
 
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
+            Mat src = form.getSrc();
+            updateHistogram(src);
         }
 
         private void Btn_HistogramEqual_Click(object sender, System.EventArgs e)
@@ -66,7 +67,10 @@ namespace IPTP
             form.updateDst();
             updateHistogram(form.getDst());
         }
-
+        private void updateHistogram()
+        {
+            updateHistogram(form.getSrc());
+        }
         private void updateHistogram(Mat dst)
         {
             if (dst.Type() != MatType.CV_8UC3)
