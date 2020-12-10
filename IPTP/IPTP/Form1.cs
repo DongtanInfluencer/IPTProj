@@ -269,6 +269,6 @@ namespace IPTP
             }
             pX = this.Location.X;
             pY = this.Location.Y;
-        }
+        } // 
     }
 }
