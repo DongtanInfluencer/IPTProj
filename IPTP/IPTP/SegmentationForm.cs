@@ -86,5 +86,11 @@ namespace IPTP
             update();
 
         }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+            form.setDst(form.getSrc().Clone());
+            form.updateDst();
+        }
     }
 }
