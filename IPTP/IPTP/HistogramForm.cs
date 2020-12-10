@@ -13,14 +13,14 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
-
-            Mat src = form.getSrc();
-            updateHistogram(src);
         }
 
         protected override void OnActivated(EventArgs e)
         {
+            //폼이 켜질때 자동으로 히스토그램 표출 , 켜질때의 Dst를 history로 표시
             base.OnActivated(e);
+            Mat src = form.getSrc();
+            updateHistogram(src);
         }
 
         private void Btn_HistogramEqual_Click(object sender, System.EventArgs e)
@@ -71,6 +71,10 @@ namespace IPTP
 
         private void updateHistogram(Mat dst)
         {
+            if (dst.Type() != MatType.CV_8UC3)
+            {
+                Cv2.CvtColor(dst, dst, ColorConversionCodes.GRAY2RGB);
+            }
             Mat[] rgb = Cv2.Split(dst);
 
             pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[0], 0));
