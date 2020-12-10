@@ -72,6 +72,12 @@ namespace IPTP
             Cv2.Merge(rgb, dst);
             form.updateDst();
 
+
+            foreach (Mat m in rgb)
+            {
+                m.Dispose();
+            }
+
         }
 
         private void Btn_Binary_Click(object sender, EventArgs e)

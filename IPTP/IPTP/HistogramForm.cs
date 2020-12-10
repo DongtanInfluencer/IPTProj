@@ -74,31 +74,43 @@ namespace IPTP
                 Cv2.CvtColor(dst, dst, ColorConversionCodes.GRAY2RGB);
             }
             Mat[] rgb = Cv2.Split(dst);
+            Mat mb = MatToHistogram(rgb[0], 0);
+            Mat mg = MatToHistogram(rgb[1], 1);
+            Mat mr = MatToHistogram(rgb[2], 2);
 
-            pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[0], 0));
-            pb_Histogram_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[1], 1));
-            pb_Histogram_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(MatToHistogram(rgb[2], 2));
+            if (pb_Histogram_Blue.Image != null) pb_Histogram_Blue.Image.Dispose();
+            if (pb_Histogram_Green.Image != null) pb_Histogram_Green.Image.Dispose();
+            if (pb_Histogram_Red.Image != null) pb_Histogram_Red.Image.Dispose();
+            pb_Histogram_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(mb);
+            pb_Histogram_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(mg);
+            pb_Histogram_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(mr);
+
+            mb.Dispose();
+            mg.Dispose();
+            mr.Dispose();
+            rgb[0].Dispose();
+            rgb[1].Dispose();
+            rgb[2].Dispose();
         }
 
         private Mat MatToHistogram(Mat histogram, int rgbCode)
         {
             const int Width = 260, Height = 200;
             Mat render = new Mat(new OpenCvSharp.Size(Width, Height), MatType.CV_8UC3, Scalar.All(255));
-
-            // Calculate histogram
+            
             Mat hist = new Mat();
-            int[] hdims = { 256 }; // Histogram size for each dimension
-            Rangef[] ranges = { new Rangef(0, 256), }; // min/max
+            int[] hdims = { 256 };
+            Rangef[] ranges = { new Rangef(0, 256), };
+            Mat[] mm = new Mat[] { histogram };
             Cv2.CalcHist(
-                new Mat[] { histogram },
+                mm,
                 new int[] { 0 },
                 null,
                 hist,
                 1,
                 hdims,
                 ranges);
-
-            // Get the max value of histogram
+            
             double minVal, maxVal;
             Cv2.MinMaxLoc(hist, out minVal, out maxVal);
             Scalar color;
@@ -120,8 +132,7 @@ namespace IPTP
                     color = Scalar.All(100);
                     break;
             }
-
-            // Scales and draws histogram
+            
             hist = hist * (maxVal != 0 ? Height / maxVal : 0.0);
 
             for (int j = 0; j < hdims[0]; ++j)
@@ -131,7 +142,9 @@ namespace IPTP
                     new OpenCvSharp.Point(j * binW, render.Rows - (int)(hist.Get<float>(j))),
                     new OpenCvSharp.Point((j + 1) * binW, render.Rows), color, -1);
             }
-
+            
+            hist.Dispose();
+            foreach (Mat m in mm) m.Dispose();
             return render;
         }
 

@@ -147,6 +147,7 @@ namespace IPTP
 
             Cv2.Filter2D(form.getSrc(), dst, form.getSrc().Type(), kernel, new OpenCvSharp.Point(0, 0));
             form.updateDst();
+            kernel.Dispose();
         }
     }
 }

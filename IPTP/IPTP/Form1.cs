@@ -39,10 +39,6 @@ namespace IPTP
             pY = this.Location.Y;
         }
 
-        public void updateSrc()
-        {
-            pb_src.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(src);
-        }
 
         public Mat getSrc()
         {
@@ -56,16 +52,25 @@ namespace IPTP
 
         public void setSrc(Mat src)
         {
+            if (this.src != null) this.src.Dispose();
             this.src = src;
         }
 
         public void setDst(Mat dst)
         {
+            if (this.dst != null) this.dst.Dispose();
             this.dst = dst;
+        }
+
+        public void updateSrc()
+        {
+            if (pb_src.Image != null) pb_src.Image.Dispose();
+            pb_src.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(src);
         }
 
         public void updateDst()
         {
+            if (pb_dst.Image != null) pb_dst.Image.Dispose();
             pb_dst.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dst);
         }
 
@@ -81,9 +86,9 @@ namespace IPTP
             String filePath = openFile();
             if (filePath != null)
             {
-                src = imread(filePath);
+                setSrc(imread(filePath));
                 updateSrc();
-                dst = src.Clone();
+                setDst(src.Clone());
                 updateDst();
             }
         }
@@ -207,7 +212,7 @@ namespace IPTP
         private void btn_convert_Click(object sender, EventArgs e)
         {
             history.Push(src.Clone());
-            src = dst.Clone();
+            setSrc(dst.Clone());
             updateSrc();
             if (history.Count > 0) btn_reset.Enabled = true;
         }
@@ -222,8 +227,8 @@ namespace IPTP
             future.Push(src.Clone());
             button1.Enabled = true;
             Mat pop = history.Pop();
-            dst = src.Clone();
-            src = pop;
+            setDst(src.Clone());
+            setSrc(pop);
             updateSrc();
             updateDst();
             if (history.Count == 0) btn_reset.Enabled = false;
@@ -239,8 +244,8 @@ namespace IPTP
             history.Push(src.Clone());
             btn_reset.Enabled = true;
             Mat pop = future.Pop();
-            dst = pop.Clone();
-            src = pop;
+            setDst(pop.Clone());
+            setSrc(pop);
             updateSrc();
             updateDst();
             if (future.Count == 0) button1.Enabled = false;

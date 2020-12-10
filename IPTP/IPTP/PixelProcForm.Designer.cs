@@ -37,6 +37,7 @@
             this.tb_bright = new System.Windows.Forms.TextBox();
             this.tb_contrast = new System.Windows.Forms.TextBox();
             this.tb_gamma = new System.Windows.Forms.TextBox();
+            this.btn_reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tr_contrast)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tr_bright)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tr_gamma)).BeginInit();
@@ -141,11 +142,22 @@
             this.tb_gamma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_gamma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigit);
             // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(545, 292);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(154, 62);
+            this.btn_reset.TabIndex = 3;
+            this.btn_reset.Text = "초기화";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            // 
             // PixelProcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 330);
+            this.ClientSize = new System.Drawing.Size(1177, 386);
+            this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.tb_gamma);
             this.Controls.Add(this.tb_contrast);
             this.Controls.Add(this.tb_bright);
@@ -181,5 +193,6 @@
         private System.Windows.Forms.TextBox tb_bright;
         private System.Windows.Forms.TextBox tb_contrast;
         private System.Windows.Forms.TextBox tb_gamma;
+        private System.Windows.Forms.Button btn_reset;
     }
 }

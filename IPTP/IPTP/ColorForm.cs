@@ -130,12 +130,27 @@ namespace IPTP
             blue[0] = rgb[0];
             Cv2.Merge(blue, rgb[0]);
 
+            if (pb_image_Red.Image != null) pb_image_Red.Image.Dispose();
+            if (pb_image_Green.Image != null) pb_image_Green.Image.Dispose();
+            if (pb_image_Blue.Image != null) pb_image_Blue.Image.Dispose();
+            if (pb_image_Hue.Image != null) pb_image_Hue.Image.Dispose();
+            if (pb_image_Sat.Image != null) pb_image_Sat.Image.Dispose();
+            if (pb_image_Value.Image != null) pb_image_Value.Image.Dispose();
             pb_image_Red.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(rgb[2]);
             pb_image_Green.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(rgb[1]);
             pb_image_Blue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(rgb[0]);
             pb_image_Hue.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[0]);
             pb_image_Sat.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[1]);
             pb_image_Value.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hsv[2]);
+
+            rgb[2].Dispose();
+            rgb[1].Dispose();
+            rgb[0].Dispose();
+            hsv[2].Dispose();
+            hsv[1].Dispose();
+            hsv[0].Dispose();
+            hsvMat.Dispose();
+            blankMat.Dispose();
         }
     }
 }

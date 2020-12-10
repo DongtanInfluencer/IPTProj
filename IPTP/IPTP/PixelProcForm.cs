@@ -76,5 +76,22 @@ namespace IPTP
             tb_gamma.Text = gamma.ToString();
             update();
         }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            tr_bright.Value = 255;
+            tr_contrast.Value = 100;
+            tr_gamma.Value = 100;
+
+            int brightness = tr_bright.Value - 255;
+            tb_bright.Text = brightness.ToString();
+
+            double contrast = ((double)tr_contrast.Value - 100) / 100 + 1;
+            tb_contrast.Text = contrast.ToString();
+
+            double gamma = (double)tr_gamma.Value / 100;
+            tb_gamma.Text = gamma.ToString();
+            update();
+        }
     }
 }

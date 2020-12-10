@@ -167,7 +167,7 @@
             // 
             // btn_Segmentation
             // 
-            this.btn_Segmentation.Location = new System.Drawing.Point(1207, 430);
+            this.btn_Segmentation.Location = new System.Drawing.Point(1207, 298);
             this.btn_Segmentation.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Segmentation.Name = "btn_Segmentation";
             this.btn_Segmentation.Size = new System.Drawing.Size(241, 58);
