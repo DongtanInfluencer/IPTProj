@@ -13,16 +13,16 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
+
+            history = form.getSrc().Clone();
+
+            Mat src = form.getSrc();
+            updateImageView(src);
         }
 
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
-            history = form.getSrc().Clone();
-
-            Mat src = form.getSrc();
-
-            updateImageView(src);
         }
 
         private void Btn_Autumn_Click(object sender, EventArgs e)

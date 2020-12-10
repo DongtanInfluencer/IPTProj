@@ -13,14 +13,14 @@ namespace IPTP
         {
             InitializeComponent();
             this.form = form;
+
+            Mat src = form.getSrc();
+            updateHistogram(src);
         }
 
         protected override void OnActivated(EventArgs e)
         {
-            //폼이 켜질때 자동으로 히스토그램 표출 , 켜질때의 Dst를 history로 표시
             base.OnActivated(e);
-            Mat src = form.getSrc();
-            updateHistogram(src);
         }
 
         private void Btn_HistogramEqual_Click(object sender, System.EventArgs e)

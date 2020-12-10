@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace IPTP
 {
@@ -9,7 +10,7 @@ namespace IPTP
     {
         private Mat src = null;
         private Mat dst = null;
-        private Mat history = null;
+        private Stack<Mat> history = new Stack<Mat>();
 
         private Form pixelProcForm = null;
         private Form histogramForm = null;
@@ -72,7 +73,6 @@ namespace IPTP
                 updateSrc();
                 dst = src.Clone();
                 updateDst();
-                history = src.Clone();
             }
         }
 
@@ -113,8 +113,10 @@ namespace IPTP
 
         private void btn_convert_Click(object sender, EventArgs e)
         {
-            src = dst;
+            history.Push(src.Clone());
+            src = dst.Clone();
             updateSrc();
+            if (history.Count > 0) btn_reset.Enabled = true;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -177,25 +179,32 @@ namespace IPTP
                     default:
                         return null;
                 }
-
+                form.Show();
+            }
+            else if (!form.Visible)
+            {
                 form.Show();
             }
             else
             {
-                form.Dispose();
+                form.Hide();
             }
             return form;
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
-            if (history == null)
+            if (history.Count == 0)
             {
+                btn_reset.Enabled = false;
                 return;
             }
-
-            src = history.Clone();
+            Mat pop = history.Pop();
+            dst = src.Clone();
+            src = pop;
             updateSrc();
+            updateDst();
+            if (history.Count == 0) btn_reset.Enabled = false;
         }
     }
 }
