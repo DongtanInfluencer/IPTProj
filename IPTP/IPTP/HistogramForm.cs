@@ -1,5 +1,6 @@
 ﻿using OpenCvSharp;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace IPTP
@@ -7,7 +8,6 @@ namespace IPTP
     public partial class HistogramForm : Form
     {
         private Form1 form = null;
-        private Mat history = null;
 
         public HistogramForm(Form1 form)
         {
@@ -29,7 +29,6 @@ namespace IPTP
         {
             Mat src = form.getSrc();
             Mat dst = form.getDst();
-            if (history == null && history != dst) history = src.Clone(); // 히스토리 만들기
 
             Mat[] rgb = Cv2.Split(src);
             //채널별 평탄화
@@ -48,7 +47,6 @@ namespace IPTP
         {
             Mat src = form.getSrc();
             Mat dst = form.getDst();
-            if (history == null && history != dst) history = src.Clone(); // 히스토리 만들기
 
             Mat[] rgb = Cv2.Split(src);
             //채널별 이진화
@@ -64,9 +62,7 @@ namespace IPTP
 
         private void btn_Reset_Click(object sender, EventArgs e)
         {
-            if (history == null) return;
-
-            form.setDst(history.Clone());
+            form.setDst(form.getSrc().Clone());
             form.updateDst();
             updateHistogram(form.getDst());
         }

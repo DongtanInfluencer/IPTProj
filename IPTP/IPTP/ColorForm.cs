@@ -7,7 +7,6 @@ namespace IPTP
     public partial class ColorForm : Form
     {
         private Form1 form = null;
-        private Mat history = null;
 
         public ColorForm(Form1 form)
         {
@@ -15,8 +14,6 @@ namespace IPTP
             this.form = form;
             this.MinimizeBox = false;
             this.MaximizeBox = false;
-
-            history = form.getSrc().Clone();
 
             Mat src = form.getSrc();
 
@@ -90,11 +87,9 @@ namespace IPTP
 
         private void btn_Reset_Click(object sender, EventArgs e)
         {
-            if (history == null) return;
-
-            form.setDst(history.Clone());
+            form.setDst(form.getSrc().Clone());
             form.updateDst();
-            updateImageView(history);
+            updateImageView(form.getDst());
         }
 
         private void applyColorMap(ColormapTypes colormapTypes)

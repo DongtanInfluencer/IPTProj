@@ -7,7 +7,6 @@ namespace IPTP
     public partial class BlurNSharpeningForm : Form
     {
         private Form1 form;
-        private Mat history;
         private int mode;
 
         private const int NOT_USE = 0, AVRG_BLUR = 1, GAUS_BLUR = 2, MEDI_BLUR = 3, BOX_BLUR = 4, BI_BLUR = 5, SARPNING = 6;
@@ -24,7 +23,6 @@ namespace IPTP
         {
             base.OnActivated(e);
             mode = NOT_USE;
-            history = form.getSrc().Clone();
             tb_value.Text = (TrB_value.Value * 2 - 1).ToString();
         }
 
@@ -73,7 +71,7 @@ namespace IPTP
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
-            form.setDst(history.Clone());
+            form.setDst(form.getSrc().Clone());
             form.updateDst();
         }
 
@@ -109,35 +107,35 @@ namespace IPTP
         private void AvrgBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.Blur(history, dst, new OpenCvSharp.Size(value, value), new OpenCvSharp.Point(-1, -1), BorderTypes.Default);
+            Cv2.Blur(form.getSrc(), dst, new OpenCvSharp.Size(value, value), new OpenCvSharp.Point(-1, -1), BorderTypes.Default);
             form.updateDst();
         }
 
         private void GausBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.GaussianBlur(history, dst, new OpenCvSharp.Size(value, value), 0, 0, BorderTypes.Default);
+            Cv2.GaussianBlur(form.getSrc(), dst, new OpenCvSharp.Size(value, value), 0, 0, BorderTypes.Default);
             form.updateDst();
         }
 
         private void BoxBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.BoxFilter(history, dst, MatType.CV_8UC3, new OpenCvSharp.Size(value, value), new OpenCvSharp.Point(-1, -1), true, BorderTypes.Default);
+            Cv2.BoxFilter(form.getSrc(), dst, MatType.CV_8UC3, new OpenCvSharp.Size(value, value), new OpenCvSharp.Point(-1, -1), true, BorderTypes.Default);
             form.updateDst();
         }
 
         private void BilateralBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.BilateralFilter(history, dst, value, value / 3, value / 3, BorderTypes.Default);
+            Cv2.BilateralFilter(form.getSrc(), dst, value, value / 3, value / 3, BorderTypes.Default);
             form.updateDst();
         }
 
         private void MedianBlur(int value)
         {
             Mat dst = form.getDst();
-            Cv2.MedianBlur(history, dst, value);
+            Cv2.MedianBlur(form.getSrc(), dst, value);
             form.updateDst();
         }
 
@@ -147,7 +145,7 @@ namespace IPTP
             float[] data = new float[9] { -1, -1, -1, -1, 9, -1, -1, -1, -1 };
             Mat kernel = new Mat(3, 3, MatType.CV_32F, data);
 
-            Cv2.Filter2D(history, dst, history.Type(), kernel, new OpenCvSharp.Point(0, 0));
+            Cv2.Filter2D(form.getSrc(), dst, form.getSrc().Type(), kernel, new OpenCvSharp.Point(0, 0));
             form.updateDst();
         }
     }

@@ -45,7 +45,7 @@
             // tr_contrast
             // 
             this.tr_contrast.Location = new System.Drawing.Point(219, 118);
-            this.tr_contrast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tr_contrast.Margin = new System.Windows.Forms.Padding(4);
             this.tr_contrast.Maximum = 200;
             this.tr_contrast.Name = "tr_contrast";
             this.tr_contrast.Size = new System.Drawing.Size(936, 90);
@@ -66,7 +66,7 @@
             // tr_bright
             // 
             this.tr_bright.Location = new System.Drawing.Point(219, 22);
-            this.tr_bright.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tr_bright.Margin = new System.Windows.Forms.Padding(4);
             this.tr_bright.Maximum = 510;
             this.tr_bright.Name = "tr_bright";
             this.tr_bright.Size = new System.Drawing.Size(936, 90);
@@ -87,7 +87,7 @@
             // tr_gamma
             // 
             this.tr_gamma.Location = new System.Drawing.Point(219, 214);
-            this.tr_gamma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tr_gamma.Margin = new System.Windows.Forms.Padding(4);
             this.tr_gamma.Maximum = 200;
             this.tr_gamma.Name = "tr_gamma";
             this.tr_gamma.Size = new System.Drawing.Size(936, 90);
@@ -108,37 +108,37 @@
             // tb_bright
             // 
             this.tb_bright.Location = new System.Drawing.Point(108, 32);
-            this.tb_bright.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_bright.Margin = new System.Windows.Forms.Padding(4);
             this.tb_bright.Name = "tb_bright";
+            this.tb_bright.ReadOnly = true;
             this.tb_bright.Size = new System.Drawing.Size(101, 35);
             this.tb_bright.TabIndex = 2;
             this.tb_bright.Text = "0";
             this.tb_bright.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tb_bright.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tb_bright.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigit);
             // 
             // tb_contrast
             // 
             this.tb_contrast.Location = new System.Drawing.Point(108, 128);
-            this.tb_contrast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_contrast.Margin = new System.Windows.Forms.Padding(4);
             this.tb_contrast.Name = "tb_contrast";
+            this.tb_contrast.ReadOnly = true;
             this.tb_contrast.Size = new System.Drawing.Size(101, 35);
             this.tb_contrast.TabIndex = 2;
             this.tb_contrast.Text = "0";
             this.tb_contrast.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tb_contrast.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tb_contrast.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigit);
             // 
             // tb_gamma
             // 
             this.tb_gamma.Location = new System.Drawing.Point(108, 226);
-            this.tb_gamma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_gamma.Margin = new System.Windows.Forms.Padding(4);
             this.tb_gamma.Name = "tb_gamma";
+            this.tb_gamma.ReadOnly = true;
             this.tb_gamma.Size = new System.Drawing.Size(101, 35);
             this.tb_gamma.TabIndex = 2;
             this.tb_gamma.Text = "0";
             this.tb_gamma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tb_gamma.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tb_gamma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigit);
             // 
             // PixelProcForm
@@ -156,13 +156,12 @@
             this.Controls.Add(this.tr_bright);
             this.Controls.Add(this.tr_contrast);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PixelProcForm";
             this.ShowIcon = false;
             this.Text = "밝기 / 대비 / 감마 조절";
-            this.Load += new System.EventHandler(this.PixelProcForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tr_contrast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tr_bright)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tr_gamma)).EndInit();

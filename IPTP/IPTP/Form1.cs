@@ -11,6 +11,7 @@ namespace IPTP
         private Mat src = null;
         private Mat dst = null;
         private readonly Stack<Mat> history = new Stack<Mat>();
+        private readonly Stack<Mat> future = new Stack<Mat>();
 
         private Form pixelProcForm = null;
         private Form histogramForm = null;
@@ -122,14 +123,6 @@ namespace IPTP
             return filePath;
         }
 
-        private void btn_convert_Click(object sender, EventArgs e)
-        {
-            history.Push(src.Clone());
-            src = dst.Clone();
-            updateSrc();
-            if (history.Count > 0) btn_reset.Enabled = true;
-        }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
             if (dst != null)
@@ -211,6 +204,14 @@ namespace IPTP
             return form;
         }
 
+        private void btn_convert_Click(object sender, EventArgs e)
+        {
+            history.Push(src.Clone());
+            src = dst.Clone();
+            updateSrc();
+            if (history.Count > 0) btn_reset.Enabled = true;
+        }
+
         private void btn_reset_Click(object sender, EventArgs e)
         {
             if (history.Count == 0)
@@ -218,12 +219,31 @@ namespace IPTP
                 btn_reset.Enabled = false;
                 return;
             }
+            future.Push(src.Clone());
+            button1.Enabled = true;
             Mat pop = history.Pop();
             dst = src.Clone();
             src = pop;
             updateSrc();
             updateDst();
             if (history.Count == 0) btn_reset.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (future.Count == 0)
+            {
+                button1.Enabled = false;
+                return;
+            }
+            history.Push(src.Clone());
+            btn_reset.Enabled = true;
+            Mat pop = future.Pop();
+            dst = pop.Clone();
+            src = pop;
+            updateSrc();
+            updateDst();
+            if (future.Count == 0) button1.Enabled = false;
         }
 
         private void btn_Segmentation_Click(object sender, EventArgs e)

@@ -173,7 +173,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(182, 35);
             this.textBox7.TabIndex = 30;
-            this.textBox7.Text = "필터";
+            this.textBox7.Text = "이진화";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Btn_Autumn
